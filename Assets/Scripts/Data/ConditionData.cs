@@ -1,0 +1,159 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ConditionData : MonoBehaviour
+{
+
+    public static void Init()
+    {
+        foreach(var kvp in Conditions)
+        {
+            var conditionID = kvp.Key;
+            var condition = kvp.Value;
+            condition.ID = conditionID;
+        }
+    }
+
+    static void PoisonEffect(Pokemon pokemon)
+    {
+
+    }
+    public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new Dictionary<ConditionID, Condition>
+    {
+        {
+            ConditionID.psn,//ÖÐ¶¾
+            new Condition()
+            {
+                Name = "Poison",
+                StartMessage = "has been poisoned",
+                OnAfterTurn = (Pokemon pokemon) =>
+                {
+                     pokemon.UpdateHP(pokemon.MaxHP/8);
+                     pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} hurt itself due to poison");
+                }
+                    
+            }
+        },
+        {
+            ConditionID.brn,//ÉÕÉË
+            new Condition()
+            {
+                Name = "Burn",
+                StartMessage = "has been Burn",
+                OnAfterTurn = (Pokemon pokemon) =>
+                {
+                     pokemon.UpdateHP(pokemon.MaxHP/8);
+                     pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} hurt itself due to Burn");
+                }
+
+            }
+        },
+        {
+            ConditionID.par,//Âé±Ô
+            new Condition()
+            {
+                Name = "Paralyzed",
+                StartMessage = "has been Paralyzed",
+                OnBeforeMove = (Pokemon pokemon) =>
+                {
+                    if (Random.Range(1, 5) == 1)
+                    {
+                        pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s paralyzed and can't move");
+                        return false;
+                    }
+                    
+                       return true;
+                    
+                }
+
+            }
+        },
+        {
+            ConditionID.frz,//Âé±Ô
+            new Condition()
+            {
+                Name = "Freeze",
+                StartMessage = "has been frozen",
+                OnBeforeMove = (Pokemon pokemon) =>
+                {
+                    if (Random.Range(1, 5) == 1)
+                    {
+                        pokemon.CureStatus();
+                        pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name}'s is not frozen anymore");
+                        return true;
+                    }
+
+                       return false;
+
+                }
+
+            }
+        },
+        {
+            ConditionID.slp,//Ë¯Ãß
+            new Condition()
+            {
+                Name = "Sleep",
+                StartMessage = "has fallen asleep",
+                OnStart = (Pokemon pokemon) =>
+                {
+                    pokemon.StatusTime = Random.Range(1,4);
+                    Debug.Log($"Will be asleep for {pokemon.StatusTime} moves");
+                },
+                OnBeforeMove = (Pokemon pokemon) =>
+                {
+                    if(pokemon.StatusTime <= 0)
+                    {
+                        pokemon.CureStatus();
+                        pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} woke up ");
+                        return true;
+                    }
+                    pokemon.StatusTime--;
+                    pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is sleeping");
+                    return false;
+                }
+
+            }
+        },
+        {
+            ConditionID.confusion,//Ë¯Ãß
+            new Condition()
+            {
+                Name = "Confusion",
+                StartMessage = "has been confused",
+                OnStart = (Pokemon pokemon) =>
+                {
+                    pokemon.VolatileStatusTime = Random.Range(1,5);
+                    Debug.Log($"Will be confused for {pokemon.VolatileStatusTime} moves");
+                },
+                OnBeforeMove = (Pokemon pokemon) =>
+                {
+                    if(pokemon.VolatileStatusTime <= 0)
+                    {
+                        pokemon.CureVolatileStatus();
+                        pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} kicked out of confusion! ");
+                        return true;
+                    }
+                    pokemon.VolatileStatusTime--;
+
+                    //%50 oto do a move
+                    if(Random.Range(1,3) ==1)
+                        return true;
+
+                    //hurt by confusion
+                    pokemon.StatusChanges.Enqueue($"{pokemon.Base.Name} is confused");
+                    pokemon.UpdateHP(pokemon.MaxHP/8);
+                    pokemon.StatusChanges.Enqueue($"It hurt itself due to confusion");
+                    return false;
+                }
+
+            }
+        }
+    };
+}
+
+public enum ConditionID
+{
+    none,psn,brn,slp,par,frz,confusion
+}
