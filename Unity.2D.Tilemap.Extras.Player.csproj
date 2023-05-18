@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B13C7480-DC29-ED58-D19E-495B6C3676B3}</ProjectGuid>
+    <ProjectGuid>{AF8BF2DF-3329-1F5B-2494-6470CB0E9C86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.Tilemap.Extras</AssemblyName>
@@ -656,7 +656,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{401EC49D-9458-4F0B-975A-4540B119EB22}</Project>
+      <Project>{D6C30718-B524-5EA7-FD99-7580CFE68B8A}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>
