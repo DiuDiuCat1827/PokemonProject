@@ -18,6 +18,8 @@ public class PokemonBase : ScriptableObject
 
     [SerializeField] PokemonType type2;
 
+    [SerializeField] int catchRate = 255;
+
     // base status
     [SerializeField] int maxHP;
     [SerializeField] int attack;
@@ -97,6 +99,8 @@ public class PokemonBase : ScriptableObject
     {
         get { return type2; }
     }
+
+    public int CatchRate => catchRate;
 }
 
 [System.Serializable]

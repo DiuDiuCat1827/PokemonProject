@@ -390,6 +390,7 @@
 "Assets/Scripts/Character/CharacterAnimator.cs"
 "Assets/Scripts/Character/GameController.cs"
 "Assets/Scripts/Character/NPCController.cs"
+"Assets/Scripts/Character/TrainerControler.cs"
 "Assets/Scripts/Data/ConditionData.cs"
 "Assets/Scripts/GamePlayer/Dialog.cs"
 "Assets/Scripts/GamePlayer/DialogManager.cs"

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public  enum GameState { FreeRoam,Battle, Dialog }
+public  enum GameState { FreeRoam,Battle, Dialog, Cutscene }
 
 public class GameController : MonoBehaviour
 {
@@ -11,10 +11,17 @@ public class GameController : MonoBehaviour
     [SerializeField] BattleSystem battleSystem;
     [SerializeField] Camera worldCamera;
 
+    TrainerControler trainer;
+
+    bool battleLost = false;
+
     GameState state;
+
+    public static GameController Instance { get; private set; }
 
     private void Awake()
     {
+        Instance = this;
         ConditionData.Init();
     }
 
@@ -23,6 +30,17 @@ public class GameController : MonoBehaviour
     {
         playerController.OnEncountered += StartBattle;
         battleSystem.OnBattleOver += EndBattle;
+
+        playerController.OnEnterTrainersView += (Collider2D trainerCollider) =>
+        {
+          var trainer = trainerCollider.GetComponentInParent<TrainerControler>();
+            if (trainer != null)
+            {
+                state = GameState.Cutscene;
+               StartCoroutine(trainer.TriggerTrainerBattle(playerController));
+            }
+        };
+
 
         DialogManager.Instance.OnShowDialog += () =>
         {
@@ -45,11 +63,33 @@ public class GameController : MonoBehaviour
         var playerParty = playerController.GetComponent<PokemonParty>();
         var wildPokemon = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildPokemon();
 
-        battleSystem.StartBattle(playerParty, wildPokemon);
+        var wildPokemonCopy = new Pokemon(wildPokemon.Base,wildPokemon.Level);
+
+        battleSystem.StartBattle(playerParty, wildPokemonCopy);
     }
+
+    public void StartTrainerBattle(TrainerControler trainer)
+    {
+        state = GameState.Battle;
+        battleSystem.gameObject.SetActive(true);
+        worldCamera.gameObject.SetActive(false);
+
+        this.trainer = trainer;
+        var playerParty = playerController.GetComponent<PokemonParty>();
+        var trainerParty = trainer.GetComponent<PokemonParty>();
+
+        battleSystem.StartTrainerBattle(playerParty, trainerParty);
+    }
+
+
 
     void EndBattle(bool win)
     {
+        if (trainer != null && win == true){
+            trainer.BattleLost();
+            trainer = null;
+        }
+
         state = GameState.FreeRoam;
         battleSystem.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);

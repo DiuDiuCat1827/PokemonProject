@@ -151,6 +151,25 @@ public class ConditionData : MonoBehaviour
             }
         }
     };
+
+    public static float GetStatusBonus(Condition condition)
+    {
+        if (condition == null)
+        {
+            return 1f;
+        }else if(condition.ID == ConditionID.slp || condition.ID == ConditionID.frz)
+        {
+            return 2f;
+        }else if(condition.ID == ConditionID.slp || condition.ID == ConditionID.frz)
+        {
+            return 1.5f;
+        }
+        else
+        {
+            return 1f;
+        }
+
+    }
 }
 
 public enum ConditionID

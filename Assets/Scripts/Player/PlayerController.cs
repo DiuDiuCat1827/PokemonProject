@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] string name;
+    [SerializeField] Sprite sprite;
     public float moveSpeed;
 
     private Vector2 input;
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
 
     public event Action OnEncountered;
+    public event Action<Collider2D> OnEnterTrainersView;
 
     private Character character;
     private void Awake()
@@ -37,7 +40,7 @@ public class PlayerController : MonoBehaviour
             if (input != Vector2.zero) 
             {
 
-               StartCoroutine(character.Move(input,CheckForEncounters));
+               StartCoroutine(character.Move(input,OnMoveOver));
                 
             }
         }
@@ -90,5 +93,31 @@ public class PlayerController : MonoBehaviour
                 OnEncountered();
             }
         }
+    }
+
+    private void OnMoveOver()
+    {
+        CheckForEncounters();
+        CheckIfInTrainerView();
+    }
+
+    private void CheckIfInTrainerView()
+    {
+        var collider = Physics2D.OverlapCircle(transform.position, 0.1f, GameLayers.i.FovLayer);
+        if ( collider!= null)
+        {
+            character.Animator.IsMoving = false;
+            OnEnterTrainersView?.Invoke(collider);
+        }
+    }
+
+    public string Name
+    {
+        get => name;
+    }
+
+    public Sprite Sprite
+    {
+        get => sprite;
     }
 }

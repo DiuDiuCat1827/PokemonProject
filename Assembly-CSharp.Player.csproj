@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\GamePlayer\Interactable.cs" />
     <Compile Include="Assets\Scripts\Battle\PartyMemberUI.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
+    <Compile Include="Assets\Scripts\Character\TrainerControler.cs" />
     <Compile Include="Assets\Scripts\Battle\PartyScreen.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterAnimator.cs" />
