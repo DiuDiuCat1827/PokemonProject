@@ -194,11 +194,7 @@ public class BattleSystem : MonoBehaviour
 
           if (targetUnit.Pokemon.HP <= 0)
           {
-            yield return dialogBox.TypeDialog($"{ targetUnit.Pokemon.Base.Name}Fainted");
-            targetUnit.PlayFaintAnimation();
-
-            yield return new WaitForSeconds(2f);
-            CheckForBattleOver(targetUnit);
+               yield return HandlePokemonFainted(targetUnit);
           }
         }
         else
@@ -229,6 +225,31 @@ public class BattleSystem : MonoBehaviour
             CheckForBattleOver(sourceUnit);
             yield return new WaitUntil(() => state == BattleState.RunningTurn);
         }
+    }
+
+    IEnumerator HandlePokemonFainted(BattleUnit faintedUnit)
+    {
+        yield return dialogBox.TypeDialog($"{ faintedUnit.Pokemon.Base.Name}Fainted");
+        faintedUnit.PlayFaintAnimation();
+
+        yield return new WaitForSeconds(2f);
+
+        if (!faintedUnit.IsPlayerUnit)
+        {
+            int expYield = faintedUnit.Pokemon.Base.ExpYield;
+            int enemyLevel = faintedUnit.Pokemon.Level;
+
+            float trainerBonus = (isTrainerBattle)? 1.5f:1f;
+
+            int expGain = Mathf.FloorToInt((expYield * enemyLevel * trainerBonus) / 7);
+            playerUnit.Pokemon.Exp += expGain;
+            yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} gained {expGain} exp");
+
+            yield return playerUnit.Hud.SetExpSmooth();
+
+        }
+
+        CheckForBattleOver(faintedUnit);
     }
 
     void CheckForBattleOver(BattleUnit faintedUnit )

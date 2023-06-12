@@ -18,6 +18,9 @@ public class PokemonBase : ScriptableObject
 
     [SerializeField] PokemonType type2;
 
+    [SerializeField] int expYield;
+    [SerializeField] GrowthRate growthRate;
+
     [SerializeField] int catchRate = 255;
 
     // base status
@@ -30,7 +33,17 @@ public class PokemonBase : ScriptableObject
 
     [SerializeField] List<LearnableMove> learnableMoves;
 
-
+    public int GetExpForLevel(int level)
+    {
+        if(growthRate == GrowthRate.Fast)
+        {
+            return 4 * (level * level * level) / 5;
+        }else if (GrowthRate == GrowthRate.MediumFast)
+        {
+            return level * level * level;
+        }
+        return -1;
+    }
     public string GetName()
     {
         return name;
@@ -101,6 +114,10 @@ public class PokemonBase : ScriptableObject
     }
 
     public int CatchRate => catchRate;
+
+    public int ExpYield => expYield;
+
+    public GrowthRate GrowthRate => growthRate;
 }
 
 [System.Serializable]
@@ -151,6 +168,11 @@ public enum Stat
     //命中等级和闪避等级
     Accuracy,
     Evasion
+}
+
+public enum GrowthRate
+{
+    Fast,MediumFast
 }
 
 public class TypeChart {
