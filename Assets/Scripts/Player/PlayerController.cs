@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] string name;
     [SerializeField] Sprite sprite;
+
+    const float offsetY = 0.3f;
     public float moveSpeed;
 
     private Vector2 input;
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckForEncounters()
     {
-        if(Physics2D.OverlapCircle(transform.position, 0.1f, GameLayers.i.GrassLayer) != null){
+        if(Physics2D.OverlapCircle(transform.position - new Vector3(0,offsetY), 0.1f, GameLayers.i.GrassLayer) != null){
             if(UnityEngine.Random.Range(1, 101) <= 10){
                 character.Animator.IsMoving = false;
                 OnEncountered();
@@ -103,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIfInTrainerView()
     {
-        var collider = Physics2D.OverlapCircle(transform.position, 0.1f, GameLayers.i.FovLayer);
+        var collider = Physics2D.OverlapCircle(transform.position - new Vector3(0, offsetY), 0.1f, GameLayers.i.FovLayer);
         if ( collider!= null)
         {
             character.Animator.IsMoving = false;
