@@ -10,7 +10,7 @@ public class Pokemon
     [SerializeField] PokemonBase _base;
     [SerializeField] int level;
 
-    public Pokemon(PokemonBase pBase,int pLevel)
+    public Pokemon(PokemonBase pBase, int pLevel)
     {
         _base = pBase;
         level = pLevel;
@@ -46,7 +46,7 @@ public class Pokemon
 
     public int StatusTime { get; set; }
 
-    public Queue<string> StatusChanges { get; private set; } 
+    public Queue<string> StatusChanges { get; private set; }
 
     public bool HpChanged { get; set; }
 
@@ -68,7 +68,7 @@ public class Pokemon
                 Moves.Add(new Move(move.Base));
             }
 
-            if (Moves.Count >= 4)
+            if (Moves.Count >= PokemonBase.MaxNumOfMoves)
             {
                 break;
             }
@@ -111,7 +111,7 @@ public class Pokemon
             { Stat.Evasion,0},
         };
     }
-    
+
 
     int GetStat(Stat stat)
     {
@@ -172,7 +172,7 @@ public class Pokemon
     public bool OnBeforeMove()
     {
         bool canPerforMove = true;
-        if(Status?.OnBeforeMove != null)
+        if (Status?.OnBeforeMove != null)
         {
             if (!Status.OnBeforeMove(this))
                 canPerforMove = false;
@@ -190,14 +190,14 @@ public class Pokemon
 
     public void ApplyBoosts(List<StatBoost> statBoosts)
     {
-        foreach(var statBoost in statBoosts)
+        foreach (var statBoost in statBoosts)
         {
             var stat = statBoost.stat;
             var boost = statBoost.boost;
 
-            StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost,-6,6);
+            StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
 
-            if(boost > 0)
+            if (boost > 0)
             {
                 StatusChanges.Enqueue($"{Base.Name}'s {stat} rose!");
             }
@@ -208,6 +208,20 @@ public class Pokemon
 
             Debug.Log($"{stat} has been bossted to {StatBoosts[stat]}");
         }
+    }
+
+    public LearnableMove GetLearnableMoveAtCurrLevel()
+    {
+        return Base.LearnableMoves.Where(x => x.Level == level).FirstOrDefault();
+    }
+
+    public void LearnMove(LearnableMove moveToLearn)
+    {
+        if(Moves.Count > PokemonBase.MaxNumOfMoves)
+        {
+            return;
+        }
+        Moves.Add(new Move(moveToLearn.Base));
     }
 
     public bool CheckForLevelUp()

@@ -252,7 +252,25 @@ public class BattleSystem : MonoBehaviour
             {
                 playerUnit.Hud.SetLevel();
                 yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} grew to lv {playerUnit.Pokemon.Level}");
+
+                var newMove = playerUnit.Pokemon.GetLearnableMoveAtCurrLevel();
+                if (newMove != null)
+                {
+                    if(playerUnit.Pokemon.Moves.Count < PokemonBase.MaxNumOfMoves)
+                    {
+                        playerUnit.Pokemon.LearnMove(newMove);
+                        yield return dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name}learned {newMove.Base.Name}");
+                        dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
+                    }
+                    else
+                    {
+                        //TOOD forget one and change
+                    }
+                }
+
                 yield return playerUnit.Hud.SetExpSmooth(true);
+
+
             }
 
         }

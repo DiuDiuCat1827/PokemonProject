@@ -18,7 +18,7 @@ MonoBehaviour:
   backSprite: {fileID: 21300000, guid: aacaae602a38f884ab9e02e43de3736d, type: 3}
   type1: 4
   type2: 5
-  expYield: 64
+  expYield: 1000
   growthRate: 1
   catchRate: 255
   maxHP: 45

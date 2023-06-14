@@ -18,7 +18,7 @@ MonoBehaviour:
   backSprite: {fileID: 21300000, guid: 612b6aa88e95291469e1d96088ebc649, type: 3}
   type1: 11
   type2: 9
-  expYield: 64
+  expYield: 1000
   growthRate: 0
   catchRate: 255
   maxHP: 60
@@ -31,8 +31,8 @@ MonoBehaviour:
   - moveBase: {fileID: 11400000, guid: 07a62569849c0ac4d9a7eb381ff0e264, type: 2}
     level: 1
   - moveBase: {fileID: 11400000, guid: 0573f243167fa6945a17438470de1fd0, type: 2}
-    level: 1
+    level: 2
   - moveBase: {fileID: 11400000, guid: 73fd536072f9d44469f81c0f0f9a46ea, type: 2}
-    level: 1
+    level: 4
   - moveBase: {fileID: 11400000, guid: cb68a543bd6859746975bf87de4844c2, type: 2}
-    level: 1
+    level: 8
