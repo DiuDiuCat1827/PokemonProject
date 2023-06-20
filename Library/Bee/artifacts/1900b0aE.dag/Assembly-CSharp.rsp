@@ -392,11 +392,14 @@
 "Assets/Scripts/Character/GameController.cs"
 "Assets/Scripts/Character/NPCController.cs"
 "Assets/Scripts/Character/TrainerControler.cs"
+"Assets/Scripts/Character/TrainerFov.cs"
 "Assets/Scripts/Data/ConditionData.cs"
 "Assets/Scripts/GamePlayer/Dialog.cs"
 "Assets/Scripts/GamePlayer/DialogManager.cs"
 "Assets/Scripts/GamePlayer/GameLayers.cs"
 "Assets/Scripts/GamePlayer/Interactable.cs"
+"Assets/Scripts/GamePlayer/IPlayerTrigger.cs"
+"Assets/Scripts/GamePlayer/LongGrass.cs"
 "Assets/Scripts/GamePlayer/MapArea.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/PokemonParty.cs"
@@ -405,6 +408,7 @@
 "Assets/Scripts/Pokemon/MoveBase.cs"
 "Assets/Scripts/Pokemon/Pokemon.cs"
 "Assets/Scripts/Pokemon/PokemonBase.cs"
+"Assets/Scripts/SceneManager/Portal.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
 -langversion:9.0
 

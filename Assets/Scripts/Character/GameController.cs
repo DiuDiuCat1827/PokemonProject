@@ -26,20 +26,9 @@ public class GameController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Start()
+    private  void Start()
     {
-        playerController.OnEncountered += StartBattle;
         battleSystem.OnBattleOver += EndBattle;
-
-        playerController.OnEnterTrainersView += (Collider2D trainerCollider) =>
-        {
-          var trainer = trainerCollider.GetComponentInParent<TrainerControler>();
-            if (trainer != null)
-            {
-                state = GameState.Cutscene;
-               StartCoroutine(trainer.TriggerTrainerBattle(playerController));
-            }
-        };
 
 
         DialogManager.Instance.OnShowDialog += () =>
@@ -54,7 +43,13 @@ public class GameController : MonoBehaviour
         };
     }
 
-    void StartBattle()
+    public void OnEnterTrainerView(TrainerControler trainer)
+    {
+        state = GameState.Cutscene;
+        StartCoroutine(trainer.TriggerTrainerBattle(playerController));
+    }
+
+    public void StartBattle()
     {
         state = GameState.Battle;
         battleSystem.gameObject.SetActive(true);

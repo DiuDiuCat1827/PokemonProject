@@ -78,9 +78,13 @@
     <Compile Include="Assets\Scripts\Player\PokemonParty.cs" />
     <Compile Include="Assets\Scripts\Pokemon\PokemonBase.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\MapArea.cs" />
+    <Compile Include="Assets\Scripts\Battle\MoveSelectionUI.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Condition.cs" />
     <Compile Include="Assets\Scripts\Data\ConditionData.cs" />
-    <Compile Include="Assets\Scripts\Battle\MoveSelectionUI.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\Portal.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\IPlayerTrigger.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\LongGrass.cs" />
+    <Compile Include="Assets\Scripts\Character\TrainerFov.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

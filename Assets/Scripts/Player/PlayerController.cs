@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
 
     // Start is called before the first frame update
 
-    public event Action OnEncountered;
-    public event Action<Collider2D> OnEnterTrainersView;
-
     private Character character;
     private void Awake()
     {
@@ -87,30 +84,21 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    private void CheckForEncounters()
-    {
-        if(Physics2D.OverlapCircle(transform.position - new Vector3(0,offsetY), 0.1f, GameLayers.i.GrassLayer) != null){
-            if(UnityEngine.Random.Range(1, 101) <= 10){
-                character.Animator.IsMoving = false;
-                OnEncountered();
-            }
-        }
-    }
-
     private void OnMoveOver()
     {
-        CheckForEncounters();
-        CheckIfInTrainerView();
-    }
-
-    private void CheckIfInTrainerView()
-    {
-        var collider = Physics2D.OverlapCircle(transform.position - new Vector3(0, offsetY), 0.1f, GameLayers.i.FovLayer);
-        if ( collider!= null)
+        var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0, offsetY), 0.2f, GameLayers.i.TriggerableLayers);
+        foreach(var collider in colliders)
         {
-            character.Animator.IsMoving = false;
-            OnEnterTrainersView?.Invoke(collider);
+            var triggerable = collider.GetComponent<IPlayerTrigger>();
+            if (triggerable != null)
+            {
+                character.Animator.IsMoving = false;
+                triggerable.OnPlayerTriggered(this);
+                break;
+            }
         }
+        //CheckForEncounters();
+        //CheckIfInTrainerView();
     }
 
     public string Name
