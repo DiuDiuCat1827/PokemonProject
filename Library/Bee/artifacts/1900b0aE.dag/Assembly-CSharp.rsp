@@ -393,6 +393,7 @@
 "Assets/Scripts/Character/NPCController.cs"
 "Assets/Scripts/Character/TrainerControler.cs"
 "Assets/Scripts/Character/TrainerFov.cs"
+"Assets/Scripts/Core/EssentialObjects.cs"
 "Assets/Scripts/Data/ConditionData.cs"
 "Assets/Scripts/GamePlayer/Dialog.cs"
 "Assets/Scripts/GamePlayer/DialogManager.cs"

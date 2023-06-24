@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] string name;
     [SerializeField] Sprite sprite;
 
-    const float offsetY = 0.3f;
     public float moveSpeed;
 
     private Vector2 input;
@@ -74,6 +73,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public Character Character => character;
+
 
     private bool IsWalkable(Vector3 targetPos)
     {
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnMoveOver()
     {
-        var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0, offsetY), 0.2f, GameLayers.i.TriggerableLayers);
+        var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0, character.offsetY), 0.2f, GameLayers.i.TriggerableLayers);
         foreach(var collider in colliders)
         {
             var triggerable = collider.GetComponent<IPlayerTrigger>();

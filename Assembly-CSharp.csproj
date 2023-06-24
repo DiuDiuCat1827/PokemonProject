@@ -65,14 +65,18 @@
     <Compile Include="Assets\Scripts\Pokemon\Move.cs" />
     <Compile Include="Assets\Scripts\Util\SpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Pokemon.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\IPlayerTrigger.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\GameLayers.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleUnit.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Interactable.cs" />
     <Compile Include="Assets\Scripts\Battle\PartyMemberUI.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\LongGrass.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Character\TrainerControler.cs" />
     <Compile Include="Assets\Scripts\Battle\PartyScreen.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\DialogManager.cs" />
+    <Compile Include="Assets\Scripts\Character\TrainerFov.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\Portal.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterAnimator.cs" />
     <Compile Include="Assets\Scripts\Battle\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Player\PokemonParty.cs" />
@@ -81,10 +85,7 @@
     <Compile Include="Assets\Scripts\Battle\MoveSelectionUI.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Condition.cs" />
     <Compile Include="Assets\Scripts\Data\ConditionData.cs" />
-    <Compile Include="Assets\Scripts\SceneManager\Portal.cs" />
-    <Compile Include="Assets\Scripts\GamePlayer\IPlayerTrigger.cs" />
-    <Compile Include="Assets\Scripts\GamePlayer\LongGrass.cs" />
-    <Compile Include="Assets\Scripts\Character\TrainerFov.cs" />
+    <Compile Include="Assets\Scripts\Core\EssentialObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -9,11 +9,14 @@ public class Character : MonoBehaviour
 
     public bool IsMoving { get; private set; }
 
+    public float offsetY { get; private set; } = 0.3f;
+
     CharacterAnimator animator;
 
     private void Awake()
     {
         animator = GetComponent<CharacterAnimator>();
+        SetPositionAndSnapToTitle(transform.position);
     }
 
     public IEnumerator Move(Vector2 moveVec,Action OnMoveOver = null )
@@ -45,6 +48,14 @@ public class Character : MonoBehaviour
     public void HandleUpdate()
     {
         animator.IsMoving = IsMoving;
+    }
+
+    public void SetPositionAndSnapToTitle(Vector2 pos)
+    {
+        pos.x = Mathf.Floor(pos.x) + 0.5f;
+        pos.y = Mathf.Floor(pos.y) + 0.5f +  offsetY;
+
+        transform.position = pos;
     }
 
     private bool IsPathClear(Vector3 targetPos)
