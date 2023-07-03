@@ -53,9 +53,11 @@
     <UnityVersion>2021.3.8f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Core\Fader.cs" />
     <Compile Include="Assets\Scripts\Character\GameController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Dialog.cs" />
     <Compile Include="Assets\Scripts\Character\NPCController.cs" />
+    <Compile Include="Assets\Scripts\Core\EssentialObjectSpawn.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleDialogBox.cs" />
     <Compile Include="Assets\Scripts\Battle\HPBar.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleSystem.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Assets\Scripts\Pokemon\MoveBase.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleHud.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Move.cs" />
+    <Compile Include="Assets\Scripts\Core\EssentialObjects.cs" />
     <Compile Include="Assets\Scripts\Util\SpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Pokemon.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\IPlayerTrigger.cs" />
@@ -85,7 +88,6 @@
     <Compile Include="Assets\Scripts\Battle\MoveSelectionUI.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Condition.cs" />
     <Compile Include="Assets\Scripts\Data\ConditionData.cs" />
-    <Compile Include="Assets\Scripts\Core\EssentialObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
