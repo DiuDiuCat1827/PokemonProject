@@ -412,6 +412,7 @@
 "Assets/Scripts/Pokemon/Pokemon.cs"
 "Assets/Scripts/Pokemon/PokemonBase.cs"
 "Assets/Scripts/SceneManager/Portal.cs"
+"Assets/Scripts/SceneManager/SceneDetails.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
 -langversion:9.0
 

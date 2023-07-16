@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Battle\MoveSelectionUI.cs" />
     <Compile Include="Assets\Scripts\Pokemon\Condition.cs" />
     <Compile Include="Assets\Scripts\Data\ConditionData.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\SceneDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
