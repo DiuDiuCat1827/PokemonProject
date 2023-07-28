@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5258010741516747100}
-  - component: {fileID: 5258010741516747101}
   - component: {fileID: 5258010741516747102}
+  - component: {fileID: 31130169611549902}
   m_Layer: 0
   m_Name: SceneTrigger
   m_TagString: Untagged
@@ -33,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5258010741516747101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258010741516747098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a311ec10b5e95854ab112f285482c5d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &5258010741516747102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71,3 +59,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 34, y: 19}
   m_EdgeRadius: 0
+--- !u!114 &31130169611549902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258010741516747098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a311ec10b5e95854ab112f285482c5d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

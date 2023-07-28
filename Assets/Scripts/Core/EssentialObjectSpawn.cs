@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class EssentialObjectSpawn : MonoBehaviour
 {
-    [SerializeField] GameObject seentialObjectPrefab;
+    [SerializeField] GameObject essentialObjectPrefab;
 
     private void Awake()
     {
       var existingObjects =   FindObjectsOfType<EssentialObjects>();
         if(existingObjects.Length == 0)
         {
-            Instantiate(seentialObjectPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            var spawPos = new Vector3(0,0,0);
+
+            var grid = FindObjectOfType<Grid>();
+
+            if (grid != null)
+            {
+                spawPos = grid.transform.position;
+            }
+            Instantiate(essentialObjectPrefab, spawPos, Quaternion.identity);
         }
     }
 }
