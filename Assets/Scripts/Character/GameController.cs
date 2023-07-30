@@ -121,6 +121,15 @@ public class GameController : MonoBehaviour
         else if(state == GameState.Dialog) {
             DialogManager.Instance.HandleUpdate();
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SavingSystem.i.Save("saveSlot1");
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SavingSystem.i.Load("saveSlot1");
+        }
     }
 
     public void SetCurrentScene(SceneDetails currScene)
