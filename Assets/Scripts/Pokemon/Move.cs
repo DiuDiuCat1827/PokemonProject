@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,4 +15,26 @@ public class Move
         PP = pBase.PP;
     }
 
-}  
+    public Move(MoveSaveData saveData)
+    {
+        Base = MoveDB.GetMoveByName(saveData.name);
+        PP = saveData.pp;
+    }
+
+    public MoveSaveData GetSaveData()
+    {
+        var saveData = new MoveSaveData()
+        {
+            name = Base.name,
+            pp = PP
+        };
+        return saveData;
+    }
+}
+
+[Serializable]
+public class MoveSaveData
+{
+    public string name;
+    public int pp;
+}
