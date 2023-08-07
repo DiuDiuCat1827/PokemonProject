@@ -402,6 +402,7 @@
 "Assets/Scripts/GamePlayer/Dialog.cs"
 "Assets/Scripts/GamePlayer/DialogManager.cs"
 "Assets/Scripts/GamePlayer/GameLayers.cs"
+"Assets/Scripts/GamePlayer/GlobalSetting.cs"
 "Assets/Scripts/GamePlayer/Interactable.cs"
 "Assets/Scripts/GamePlayer/IPlayerTrigger.cs"
 "Assets/Scripts/GamePlayer/LongGrass.cs"
@@ -419,6 +420,7 @@
 "Assets/Scripts/SceneManager/LocationPortal.cs"
 "Assets/Scripts/SceneManager/Portal.cs"
 "Assets/Scripts/SceneManager/SceneDetails.cs"
+"Assets/Scripts/UI/MenuController.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
 -langversion:9.0
 

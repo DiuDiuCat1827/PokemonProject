@@ -8,7 +8,6 @@ public class BattleDialogBox : MonoBehaviour
 {
     [SerializeField] Text dialogText;
     [SerializeField] int lettersPerSecond;
-    [SerializeField] Color highLightedColor;
 
     [SerializeField] GameObject actionSelector;
     [SerializeField] GameObject moveSelector;
@@ -23,6 +22,13 @@ public class BattleDialogBox : MonoBehaviour
 
     [SerializeField] Text yesText;
     [SerializeField] Text notText;
+
+    Color highLightedColor;
+
+    private void Start()
+    {
+        highLightedColor  = GlobalSetting.i.HighlightedColor;
+    }
 
     public void SetDialog(string dialog)
     {
