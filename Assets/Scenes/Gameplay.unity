@@ -132,12 +132,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31130169611549902, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
       propertyPath: connectedScenes.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 31130169611549902, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
       propertyPath: connectedScenes.Array.data[0]
       value: 
       objectReference: {fileID: 1621131839}
+    - target: {fileID: 31130169611549902, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
+      propertyPath: connectedScenes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1076786756}
     - target: {fileID: 5258010741516747098, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
       propertyPath: m_Name
       value: House1
