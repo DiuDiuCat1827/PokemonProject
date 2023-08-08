@@ -420,6 +420,7 @@
 "Assets/Scripts/SceneManager/LocationPortal.cs"
 "Assets/Scripts/SceneManager/Portal.cs"
 "Assets/Scripts/SceneManager/SceneDetails.cs"
+"Assets/Scripts/UI/InventoryUI.cs"
 "Assets/Scripts/UI/MenuController.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
 -langversion:9.0
