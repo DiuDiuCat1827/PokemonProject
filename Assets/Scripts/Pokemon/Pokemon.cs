@@ -51,6 +51,8 @@ public class Pokemon
     public bool HpChanged { get; set; }
 
     public event System.Action OnStatusChanged;
+    public event System.Action OnHPChanged;
+
 
     public Condition VolatileStatus { get; private set; }
 
@@ -89,6 +91,7 @@ public class Pokemon
     public  Pokemon(PokemonSaveData saveData)
 {
     _base = PokemonDB.GetPokemonByName(saveData.name);
+   
     HP = saveData.hp;
     level = saveData.level;
     Exp = saveData.exp;
@@ -285,7 +288,7 @@ public class Pokemon
 
     public int MaxHP
     {
-        get;
+        get ;
         private set;
     }
 
@@ -313,15 +316,25 @@ public class Pokemon
         float d = a * move.Base.Power * ((float)(attack / defense)) + 2;
         int damage = Mathf.FloorToInt(d * modifiers);
 
-        UpdateHP(damage);
+        DecreaseHP(damage);
         return damageDetails;
         
  
     }
 
-    public void UpdateHP(int damage)
+    public void IncreaseHP(int amount)
     {
+
+        HP = Mathf.Clamp(HP + amount, 0, MaxHP);
+        OnHPChanged?.Invoke();
+        HpChanged = true;
+    } 
+
+    public void DecreaseHP(int damage)
+    {
+
         HP = Mathf.Clamp(HP - damage, 0, MaxHP);
+        OnHPChanged?.Invoke();
         HpChanged = true;
     }
 

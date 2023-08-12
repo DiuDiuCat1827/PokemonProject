@@ -29,6 +29,23 @@ public class DialogManager : MonoBehaviour
 
     public bool IsShowing { get; private set; }
 
+    public IEnumerator ShowDialogText(string text, bool waitForInput = true)
+    {
+        IsShowing = true;
+
+        dialogBox.SetActive(true);
+        yield return TypeDialog(text);
+
+        if (waitForInput)
+        {
+            yield return new WaitUntil( ()=> Input.GetKeyDown(KeyCode.J));
+        }
+
+        dialogBox.SetActive(false);
+
+         IsShowing = false;
+    }
+
     public IEnumerator ShowDialog(Dialog dialog,Action onFinished = null)
     {
         yield return new WaitForEndOfFrame();
@@ -71,7 +88,7 @@ public class DialogManager : MonoBehaviour
             dialogText.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         isTyping = false;
     }
 }

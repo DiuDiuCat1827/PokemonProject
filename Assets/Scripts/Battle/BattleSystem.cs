@@ -513,8 +513,9 @@ public class BattleSystem : MonoBehaviour
     {
         partyScreen.CalledFrom = state;
         state = BattleState.PartyScreen;
-        partyScreen.SetPartyData(playerParty.Pokemons);
+        partyScreen.SetPartyData();
         partyScreen.gameObject.SetActive(true);
+        
     }
 
     void HandleActionSelection()

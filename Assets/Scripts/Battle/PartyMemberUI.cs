@@ -10,13 +10,19 @@ public class PartyMemberUI : MonoBehaviour
     [SerializeField] HPBar hPBar;
 
     Pokemon _pokemon;
-    public void SetData(Pokemon pokemon)
+    public void Init(Pokemon pokemon)
     {
         _pokemon = pokemon;
-        nameText.text = pokemon.Base.Name;
-        levelText.text = "Lv" + pokemon.Level;
-        hPBar.SetHP((float)pokemon.HP / pokemon.MaxHP);
+        UpdateData();
 
+        _pokemon.OnHPChanged += UpdateData;
+    }
+
+    void UpdateData()
+    {
+         nameText.text = _pokemon.Base.Name;
+        levelText.text = "Lv" + _pokemon.Level;
+        hPBar.SetHP((float)_pokemon.HP / _pokemon.MaxHP);
     }
 
 
