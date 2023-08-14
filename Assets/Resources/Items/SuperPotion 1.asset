@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SuperPotion 1
   m_EditorClassIdentifier: 
   name: Super Potion
-  description: Recovers the health of a Pokemon by 40 points
+  description: Recovers the health of a Pokemon by 60 points
   icon: {fileID: -1422471846, guid: 4b7c9e004f0c221448d99c6f5fbe3669, type: 3}
-  hpAmount: 50
+  hpAmount: 60
   restoreMaxHP: 0
   ppAmount: 0
   restoreMaxPP: 0
