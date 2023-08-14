@@ -258,6 +258,12 @@ MonoBehaviour:
     count: 7
   - item: {fileID: 11400000, guid: 416bee6b1322ee044850ed50906a8173, type: 2}
     count: 7
+  pokeballSlots:
+  - item: {fileID: 11400000, guid: 4c790a28e7d8a1f4e9c2c5c7f46f23de, type: 2}
+    count: 2
+  - item: {fileID: 11400000, guid: 46ea12cbcc2f4c34c85df043e0369f6b, type: 2}
+    count: 2
+  tmSlots: []
 --- !u!1 &8323742395646887042
 GameObject:
   m_ObjectHideFlags: 0
