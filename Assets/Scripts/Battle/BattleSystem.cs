@@ -67,6 +67,8 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.BattleOver;
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
+        playerUnit.Hud.ClearData();
+        enemyUnit.Hud.ClearData();
         OnBattleOver(win);
     }
 
@@ -155,7 +157,6 @@ public class BattleSystem : MonoBehaviour
         if (!canRunMove)
         {
             yield return ShowStatusChanges(sourceUnit.Pokemon);
-            yield return sourceUnit.Hud.UpdateHp();
             yield break;
             
         }
@@ -176,7 +177,7 @@ public class BattleSystem : MonoBehaviour
           else
           {
             var damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
-            yield return targetUnit.Hud.UpdateHp();
+            targetUnit.Hud.UpdateHP();
             yield return ShowDamageDetails(damageDetails);
           }
 
@@ -215,7 +216,7 @@ public class BattleSystem : MonoBehaviour
         //Status like burn or psn will hurt pokemon after the turn 
         sourceUnit.Pokemon.OnAfterTurn();
         yield return ShowStatusChanges(sourceUnit.Pokemon);
-        yield return sourceUnit.Hud.UpdateHp();
+        sourceUnit.Hud.UpdateHP();
 
 
         if (sourceUnit.Pokemon.HP <= 0)

@@ -32,27 +32,30 @@ public class Inventory : MonoBehaviour
         return allSlots[categoryIndex];
     }
 
-    public ItemBase  UseItem(int itemIndex,Pokemon selectedPokemon)
+    public ItemBase  UseItem(int itemIndex,Pokemon selectedPokemon, int selectedCategory)
     {
-        var item = slots[itemIndex].Item;
+        var currentSlots = GetSlotsByCategory(selectedCategory);
+
+        var item = currentSlots[itemIndex].Item;
         bool itemUsed = item.Use(selectedPokemon);
         if (itemUsed)
         {
-            RemoveItem(item);
+            RemoveItem(item, selectedCategory);
             return item;
         }
 
         return null;
     }
 
-    public void RemoveItem(ItemBase item)
+    public void RemoveItem(ItemBase item, int category)
     {
-        Debug.Log("RemoveItem");
-        var itemSlot = slots.First(slots => slots.Item == item);
+        var currentSlots = GetSlotsByCategory(category);
+
+        var itemSlot = currentSlots.First(slots => slots.Item == item);
         itemSlot.Count--;
         if (itemSlot.Count == 0)
         {
-            slots.Remove(itemSlot);
+            currentSlots.Remove(itemSlot);
         }
 
         OnUpdated?.Invoke();

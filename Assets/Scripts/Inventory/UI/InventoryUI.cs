@@ -142,7 +142,7 @@ public class InventoryUI : MonoBehaviour
     {
 
         inventoryState = InventoryUIState.Busy;
-        var useItem =  inventory.UseItem(selectedItem, partyScreen.Selectedmember);
+        var useItem =  inventory.UseItem(selectedItem, partyScreen.Selectedmember, selectedCategory);
         if(useItem != null)
         {
            yield return DialogManager.Instance.ShowDialogText($"The Player used {useItem.Name}");
@@ -180,6 +180,8 @@ public class InventoryUI : MonoBehaviour
     void UpdateItemSelection()
     {
         var slots = inventory.GetSlotsByCategory(selectedCategory);
+        selectedItem = Mathf.Clamp(selectedItem, 0, slots.Count - 1);
+
 
         for (int i = 0; i < slotUIList.Count; i++)
         {
@@ -196,7 +198,7 @@ public class InventoryUI : MonoBehaviour
 
 
 
-        selectedItem = Mathf.Clamp(selectedItem, 0, slots.Count -1);
+ 
 
         if (slots.Count > 0)
         {
