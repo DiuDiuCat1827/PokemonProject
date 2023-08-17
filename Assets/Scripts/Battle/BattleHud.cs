@@ -115,5 +115,10 @@ public class BattleHud : MonoBehaviour
             _pokemon.OnHPChanged -= UpdateHP;
             _pokemon.OnStatusChanged -= SetStatusText;
         }
+    } 
+
+    public IEnumerator WaitForHPUpdate()
+    {
+        yield return new WaitUntil( () => hPBar.IsUpdating == false);
     }
 }

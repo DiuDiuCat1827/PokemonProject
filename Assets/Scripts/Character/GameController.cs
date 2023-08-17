@@ -207,4 +207,6 @@ public class GameController : MonoBehaviour
 
 
     }
+
+    public GameState State => state;
 }

@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &77648408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7154264069301056290, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+  m_PrefabInstance: {fileID: 1882595299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7d8fbf030c9644c9643142eab3f3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &951138342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1807,6 +1818,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8923396280226712424, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 77648408}
+    - target: {fileID: 8923396280226712424, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: pokeballSprite
+      value: 
+      objectReference: {fileID: 4439230649389300680, guid: 063c86e8389e44448a3494c025106b0e, type: 3}
     - target: {fileID: 8923396280423338570, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_RootOrder
       value: 4

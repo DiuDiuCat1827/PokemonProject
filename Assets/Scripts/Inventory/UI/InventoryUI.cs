@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
+public enum ItemCategory { Items,Pokeballs,Tms,}
+
 public enum InventoryUIState  { ItemSelection, PartySelection,Busy}
 
 public class InventoryUI : MonoBehaviour
@@ -21,8 +23,8 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] PartyScreen partyScreen;
 
-    List<ItemSlotUI> slotUIList;
-    RectTransform itemListRect;
+
+    Action<ItemBase> onItemUsed;
 
     int selectedItem = 0;
     int selectedCategory = 0;
@@ -31,8 +33,9 @@ public class InventoryUI : MonoBehaviour
 
     const int itemsInViewport = 8;
 
+    List<ItemSlotUI> slotUIList;
     Inventory inventory;
-
+    RectTransform itemListRect;
     private void Awake()
     {
         inventory = Inventory.GetInventory();
@@ -69,9 +72,9 @@ public class InventoryUI : MonoBehaviour
 
 
 
-    public void HandleUpdate(Action onBack)
+    public void HandleUpdate(Action onBack,Action<ItemBase> onItemUsed = null)
     {
-
+        this.onItemUsed = onItemUsed;
         if (inventoryState == InventoryUIState.ItemSelection)
         {
             int preSelection = selectedItem;
@@ -116,7 +119,7 @@ public class InventoryUI : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.J))
             {
-                OpenPartyScreen();
+                ItemSelected();
             }else if (Input.GetKeyDown(KeyCode.K))
             {
                 onBack?.Invoke();
@@ -138,6 +141,18 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    void ItemSelected()
+    {
+        if(selectedCategory == (int) ItemCategory.Pokeballs)
+        {
+            StartCoroutine(UseItem());
+        }
+        else
+        {
+            OpenPartyScreen();
+        }
+    }
+
     IEnumerator UseItem()
     {
 
@@ -145,7 +160,13 @@ public class InventoryUI : MonoBehaviour
         var useItem =  inventory.UseItem(selectedItem, partyScreen.Selectedmember, selectedCategory);
         if(useItem != null)
         {
-           yield return DialogManager.Instance.ShowDialogText($"The Player used {useItem.Name}");
+            if( !(useItem is PokeballItem))
+            {
+                yield return DialogManager.Instance.ShowDialogText($"The Player used {useItem.Name}");
+            }
+           
+
+            onItemUsed?.Invoke(useItem);
         }
         else
         {

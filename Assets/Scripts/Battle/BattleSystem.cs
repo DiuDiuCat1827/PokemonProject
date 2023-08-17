@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy ,PartyScreen ,AboutToUse,MoveToForget, BattleOver,None}
+public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy ,PartyScreen ,AboutToUse,MoveToForget, BattleOver,Bag, None}
 public enum BattleAction { Move,SwitchPokemon,UseItem,Run}
 
 public class BattleSystem : MonoBehaviour
@@ -21,6 +21,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Image trainerImage;
     [SerializeField] GameObject pokeballSprite;
     [SerializeField] MoveSelectionUI moveSelectionUI;
+    [SerializeField] InventoryUI inventoryUI;
     MoveBase moveToLearn;
 
 
@@ -121,7 +122,7 @@ public class BattleSystem : MonoBehaviour
             }else if(playerAction == BattleAction.UseItem)
             {
                 dialogBox.EnableActionSelector(false);
-                yield return ThrowPokeball();
+                //yield return ThrowPokeball();
             }else if (playerAction == BattleAction.Run)
             {
 
@@ -157,6 +158,7 @@ public class BattleSystem : MonoBehaviour
         if (!canRunMove)
         {
             yield return ShowStatusChanges(sourceUnit.Pokemon);
+            yield return sourceUnit.Hud.WaitForHPUpdate();
             yield break;
             
         }
@@ -177,7 +179,7 @@ public class BattleSystem : MonoBehaviour
           else
           {
             var damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
-            targetUnit.Hud.UpdateHP();
+                yield return targetUnit.Hud.WaitForHPUpdate();
             yield return ShowDamageDetails(damageDetails);
           }
 
@@ -212,12 +214,11 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.BattleOver) yield break;
         yield return new WaitUntil(()=> state == BattleState.RunningTurn);
+        yield return sourceUnit.Hud.WaitForHPUpdate();
 
         //Status like burn or psn will hurt pokemon after the turn 
         sourceUnit.Pokemon.OnAfterTurn();
         yield return ShowStatusChanges(sourceUnit.Pokemon);
-        sourceUnit.Hud.UpdateHP();
-
 
         if (sourceUnit.Pokemon.HP <= 0)
         {
@@ -438,6 +439,20 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.PartyScreen)
         {
             HandlePartySelection();
+        }else if(state == BattleState.Bag){
+            Action onBack = () =>
+            {
+                inventoryUI.gameObject.SetActive(false);
+                state = BattleState.ActionSelection;
+            };
+
+            Action<ItemBase> onItemUsed = (ItemBase usedItem) =>
+            {
+                  StartCoroutine(OnItemUsed(usedItem));         
+            };
+
+            inventoryUI.HandleUpdate(onBack, onItemUsed);
+
         }else if(state == BattleState.AboutToUse)
         {
             HandleAboutToUse();
@@ -519,6 +534,13 @@ public class BattleSystem : MonoBehaviour
         
     }
 
+    void OpenBag()
+    {
+        state = BattleState.Bag;
+        inventoryUI.gameObject.SetActive(true);
+
+    }
+
     void HandleActionSelection()
     {
         if (Input.GetKeyDown(KeyCode.D))
@@ -547,7 +569,8 @@ public class BattleSystem : MonoBehaviour
             }else if (currentAction == 1)
             {
                 //Bag
-                StartCoroutine(RunTurns(BattleAction.UseItem));
+                OpenBag();
+                //StartCoroutine(RunTurns(BattleAction.UseItem));
             }else if (currentAction == 2)
             {
                 //Pokemon
@@ -729,6 +752,18 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.RunningTurn;
     }
 
+    IEnumerator OnItemUsed(ItemBase usedItem)
+    {
+        state = BattleState.Busy;
+        inventoryUI.gameObject.SetActive(false);
+
+       if(usedItem is PokeballItem){
+            yield return ThrowPokeball((PokeballItem)usedItem);
+        }
+
+        StartCoroutine(RunTurns(BattleAction.UseItem));
+    }
+
     void HandleAboutToUse()
     {
         if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)){
@@ -757,7 +792,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator ThrowPokeball()
+    IEnumerator ThrowPokeball(PokeballItem pokeballItem)
     {
         state = BattleState.Busy;
 
@@ -766,15 +801,17 @@ public class BattleSystem : MonoBehaviour
             yield return dialogBox.TypeDialog($"You can't steal the trainers pokemons ");
         }
 
-        yield return dialogBox.TypeDialog($"{player.Name} used POKEBALL");
+        yield return dialogBox.TypeDialog($"{player.Name} used {pokeballItem.Name.ToUpper()}!");
+       
         var pokeballObj = Instantiate(pokeballSprite, playerUnit.transform.position - new Vector3(2,0), Quaternion.identity);
-
         var pokeball = pokeballObj.GetComponent<SpriteRenderer>();
+        pokeball.sprite = pokeballItem.Icon;
+
         yield return pokeball.transform.DOJump(enemyUnit.transform.position + new Vector3(0, 1), 2f, 1, 1f).WaitForCompletion();
         yield return enemyUnit.PlayCaptureAnimation();
         yield return pokeball.transform.DOMoveY(enemyUnit.transform.position.y - 1.5f, 0.5f).WaitForCompletion();
 
-        int shakeCount = TryToCatchPokemon(enemyUnit.Pokemon);
+        int shakeCount = TryToCatchPokemon(enemyUnit.Pokemon, pokeballItem);
 
         for (int i = 0; i < Mathf.Min(shakeCount,3); i++)
         {
@@ -811,9 +848,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    int TryToCatchPokemon(Pokemon pokemon)
+    int TryToCatchPokemon(Pokemon pokemon, PokeballItem pokeballItem)
     {
-        float rate = (3 * pokemon.MaxHP - 2 * pokemon.HP) * pokemon.Base.CatchRate * ConditionData.GetStatusBonus(pokemon.Status) / (3 * pokemon.MaxHP);
+        float rate = (3 * pokemon.MaxHP - 2 * pokemon.HP) * pokemon.Base.CatchRate * pokeballItem.CatchRateModifier * ConditionData.GetStatusBonus(pokemon.Status) / (3 * pokemon.MaxHP);
         if(rate >= 255)
         {
             return 4;

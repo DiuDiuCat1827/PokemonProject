@@ -7,6 +7,9 @@ public class HPBar : MonoBehaviour
 
     [SerializeField] GameObject health;
     // Start is called before the first frame update
+
+    public bool IsUpdating { get; private set; }
+
     void Start()
     {
         health.transform.localScale = new Vector3(1f, 1f);
@@ -19,6 +22,8 @@ public class HPBar : MonoBehaviour
 
     public IEnumerator SetHPSmooth(float newHP)
     {
+        IsUpdating = true;
+
         float curHP = health.transform.localScale.x;
         float changeAmt = curHP - newHP;
         while(curHP - newHP > Mathf.Epsilon)
@@ -28,5 +33,7 @@ public class HPBar : MonoBehaviour
             yield return null;
         }
         health.transform.localScale = new Vector3(newHP, 1f);
+
+        IsUpdating = false;
     }
 }
