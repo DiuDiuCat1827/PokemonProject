@@ -590,6 +590,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a7db6c228aece244a41a3905768bf52, type: 2}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: c9b2df54d0b045041807a85f239f4d5c, type: 2}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.data[0].count
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.data[1].count
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 498398233521349300, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

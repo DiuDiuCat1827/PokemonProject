@@ -32,11 +32,16 @@ public class Inventory : MonoBehaviour
         return allSlots[categoryIndex];
     }
 
-    public ItemBase  UseItem(int itemIndex,Pokemon selectedPokemon, int selectedCategory)
+    public ItemBase GetItem(int itemIndex, int selectedCategory)
     {
         var currentSlots = GetSlotsByCategory(selectedCategory);
 
-        var item = currentSlots[itemIndex].Item;
+        return currentSlots[itemIndex].Item;
+    }
+
+    public ItemBase  UseItem(int itemIndex,Pokemon selectedPokemon, int selectedCategory)
+    {
+        var item = GetItem(itemIndex, selectedCategory);
         bool itemUsed = item.Use(selectedPokemon);
         if (itemUsed)
         {

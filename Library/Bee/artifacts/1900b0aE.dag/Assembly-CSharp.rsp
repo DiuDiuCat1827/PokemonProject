@@ -411,6 +411,7 @@
 "Assets/Scripts/Inventory/ItemBase.cs"
 "Assets/Scripts/Inventory/PokeballItem.cs"
 "Assets/Scripts/Inventory/RecoveryItem.cs"
+"Assets/Scripts/Inventory/TmItem.cs"
 "Assets/Scripts/Inventory/UI/InventoryUI.cs"
 "Assets/Scripts/Inventory/UI/ItemSlotUI.cs"
 "Assets/Scripts/Player/PlayerController.cs"
