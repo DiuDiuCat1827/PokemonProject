@@ -12,7 +12,7 @@ public class DialogManager : MonoBehaviour
 
     public event Action OnShowDialog;
     public event Action OnCloseDialog;
-    public event Action OnDialogFinished;
+
 
     public static DialogManager Instance { get; private set; }
 
@@ -20,12 +20,6 @@ public class DialogManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    Dialog dialog;
-
-    int currentLine = 0;
-
-    bool isTyping;
 
     public bool IsShowing { get; private set; }
 
@@ -54,42 +48,34 @@ public class DialogManager : MonoBehaviour
         IsShowing = false;
     }
 
-    public IEnumerator ShowDialog(Dialog dialog,Action onFinished = null)
+    public IEnumerator ShowDialog(Dialog dialog)
     {
         yield return new WaitForEndOfFrame();
 
         OnShowDialog?.Invoke();
 
         IsShowing = true;
-        this.dialog = dialog;
-
-        OnDialogFinished = onFinished;
         dialogBox.SetActive(true);
-        StartCoroutine(TypeDialog(dialog.Lines[0]));
+
+        foreach(var line in dialog.Lines)
+        {
+          yield return TypeDialog(line);
+          yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.J));
+        }
+
+        dialogBox.SetActive(false);
+        IsShowing = false;
+
+        OnCloseDialog?.Invoke();
     }
 
     public void HandleUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.J)&& !isTyping)
-        {
-            ++currentLine;
-            if(currentLine < dialog.Lines.Count)
-            {
-                StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
-            }else
-            {
-                currentLine = 0;
-                IsShowing = false;
-                dialogBox.SetActive(false);
-                OnDialogFinished?.Invoke();
-                OnCloseDialog?.Invoke();
-            }
-        }
+        
     }
 
     public IEnumerator TypeDialog(string dialog)
     {
-        isTyping = true;
         dialogText.text = "";
         foreach (var letter in dialog.ToCharArray())
         {
@@ -97,6 +83,5 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(1f / lettersPerSecond);
         }
         yield return new WaitForSeconds(0.3f);
-        isTyping = false;
     }
 }

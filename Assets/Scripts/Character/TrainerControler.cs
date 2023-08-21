@@ -44,10 +44,10 @@ public class TrainerControler : MonoBehaviour,Interactable,ISavable
 
         // show dialog
 
-        StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
-        {
-            GameController.Instance.StartTrainerBattle(this);
-        }));
+        yield return  DialogManager.Instance.ShowDialog(dialog);
+
+        GameController.Instance.StartTrainerBattle(this);
+
     }
 
     public void SetFovRotation(FacingDirection dir)
@@ -63,21 +63,21 @@ public class TrainerControler : MonoBehaviour,Interactable,ISavable
         fov.transform.eulerAngles = new Vector3(0f, 0f, angle);
     }
 
-    public void Interact(Transform initiator)
+    public IEnumerator Interact(Transform initiator)
     {
         
         character.LookTowards(initiator.position);
 
 
         if (!bBattleLost) {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
-            {
-                GameController.Instance.StartTrainerBattle(this);
-            }));
+            yield return DialogManager.Instance.ShowDialog(dialog);
+           
+            GameController.Instance.StartTrainerBattle(this);
+
         }
         else
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialogAfterBattle));
+            yield return  DialogManager.Instance.ShowDialog(dialogAfterBattle);
         }
 
         

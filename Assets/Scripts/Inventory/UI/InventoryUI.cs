@@ -213,7 +213,8 @@ public class InventoryUI : MonoBehaviour
         }
         else
         {
-            if(useItem is RecoveryItem)
+            Debug.Log(selectedCategory);
+            if(selectedCategory == (int)ItemCategory.Items)
             {
                 yield return DialogManager.Instance.ShowDialogText($"It won't have any affect!");
             }
