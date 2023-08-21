@@ -45,7 +45,11 @@ public class Inventory : MonoBehaviour
         bool itemUsed = item.Use(selectedPokemon);
         if (itemUsed)
         {
-            RemoveItem(item, selectedCategory);
+            if (!item.IsReusable)
+            {
+                RemoveItem(item, selectedCategory);
+            }
+            
             return item;
         }
 

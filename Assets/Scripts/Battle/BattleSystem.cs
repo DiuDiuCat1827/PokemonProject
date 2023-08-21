@@ -472,6 +472,7 @@ public class BattleSystem : MonoBehaviour
                     var selectedMove = playerUnit.Pokemon.Moves[moveIndex].Base;
                     StartCoroutine(dialogBox.TypeDialog($"{playerUnit.Pokemon.Base.Name} forgot {selectedMove.Name} and learn {moveToLearn.Name}"));
                     //forget the select move and learn new move
+                    Debug.Log(moveToLearn.Name);
                     playerUnit.Pokemon.Moves[moveIndex] = new Move(moveToLearn);
                 }
                 moveToLearn = null;

@@ -592,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: tmSlots.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: tmSlots.Array.data[0].item
@@ -603,12 +603,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c9b2df54d0b045041807a85f239f4d5c, type: 2}
     - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.data[2].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 3176b2fa5693784428781e6c23600bae, type: 2}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: tmSlots.Array.data[0].count
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: tmSlots.Array.data[1].count
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: tmSlots.Array.data[2].count
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 498398233521349300, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1894,6 +1902,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EssentialObjects
       objectReference: {fileID: 0}
+    - target: {fileID: 8923396281121714329, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: pokemons.Array.data[0]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
+    - target: {fileID: 8923396281121714329, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: pokemons.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
+    - target: {fileID: 8923396281121714329, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: pokemons.Array.data[2]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
     - target: {fileID: 8923396282263416656, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: partyScreen
       value: 
