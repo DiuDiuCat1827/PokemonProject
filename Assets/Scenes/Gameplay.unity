@@ -322,11 +322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: 3fd6d38cfc8719f4db7f25f101617a22, type: 2}
+  - _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
     level: 2
-  - _base: {fileID: 11400000, guid: 8ecef132ce5b4774896a9829c64764d0, type: 2}
+  - _base: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
     level: 3
-  - _base: {fileID: 11400000, guid: 8ecef132ce5b4774896a9829c64764d0, type: 2}
+  - _base: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
     level: 5
 --- !u!114 &1076786756 stripped
 MonoBehaviour:
@@ -453,11 +453,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: 3fd6d38cfc8719f4db7f25f101617a22, type: 2}
+  - _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
     level: 2
-  - _base: {fileID: 11400000, guid: 8ecef132ce5b4774896a9829c64764d0, type: 2}
+  - _base: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
     level: 3
-  - _base: {fileID: 11400000, guid: 8ecef132ce5b4774896a9829c64764d0, type: 2}
+  - _base: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
     level: 5
 --- !u!1001 &1882595299
 PrefabInstance:
@@ -2237,9 +2237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: 3fd6d38cfc8719f4db7f25f101617a22, type: 2}
+  - _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
     level: 2
-  - _base: {fileID: 11400000, guid: 8ecef132ce5b4774896a9829c64764d0, type: 2}
+  - _base: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
     level: 3
-  - _base: {fileID: 11400000, guid: 8ecef132ce5b4774896a9829c64764d0, type: 2}
+  - _base: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
     level: 5
