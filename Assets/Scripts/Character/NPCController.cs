@@ -15,6 +15,8 @@ public class NPCController : MonoBehaviour, Interactable
    
     Character character;
 
+    ItemGiver itemGiver;
+
     NPCState state;
     float idleTimer = 0f;
     int currentPattern = 0;
@@ -23,6 +25,7 @@ public class NPCController : MonoBehaviour, Interactable
         //spriteAnimator = new SpriteAnimator(sprites, GetComponent<SpriteRenderer>());
         //spriteAnimator.Start();
         character = GetComponent<Character>();
+        itemGiver = GetComponent<ItemGiver>();
     }
 
     private void Update()
@@ -70,7 +73,16 @@ public class NPCController : MonoBehaviour, Interactable
             state = NPCState.Dialog;
             character.LookTowards(initiator.position);
 
-            yield return DialogManager.Instance.ShowDialog(dialog);
+            if(itemGiver != null && itemGiver.CanBeGiven())
+            {
+               yield return  itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
+            }
+            else
+            {
+                yield return DialogManager.Instance.ShowDialog(dialog);
+            }
+
+            
             idleTimer = 0f;
             state = NPCState.Idle;         
         }

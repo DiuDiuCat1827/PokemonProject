@@ -409,6 +409,7 @@
 "Assets/Scripts/GamePlayer/MapArea.cs"
 "Assets/Scripts/Inventory/Inventory.cs"
 "Assets/Scripts/Inventory/ItemBase.cs"
+"Assets/Scripts/Inventory/ItemGiver.cs"
 "Assets/Scripts/Inventory/Pickup.cs"
 "Assets/Scripts/Inventory/PokeballItem.cs"
 "Assets/Scripts/Inventory/RecoveryItem.cs"

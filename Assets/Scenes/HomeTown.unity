@@ -10783,6 +10783,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 46ea12cbcc2f4c34c85df043e0369f6b, type: 2}
+    - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: I have some pokeball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: Give you some.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
 --- !u!1001 &4439230648146058347
