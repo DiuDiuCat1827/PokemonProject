@@ -397,6 +397,7 @@
 "Assets/Scripts/Core/Fader.cs"
 "Assets/Scripts/Core/InvisibleTilemap.cs"
 "Assets/Scripts/Data/ConditionData.cs"
+"Assets/Scripts/Data/ItemDB.cs"
 "Assets/Scripts/Data/MoveDB.cs"
 "Assets/Scripts/Data/PokemonDB.cs"
 "Assets/Scripts/GamePlayer/Dialog.cs"
