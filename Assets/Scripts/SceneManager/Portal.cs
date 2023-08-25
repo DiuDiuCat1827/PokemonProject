@@ -38,6 +38,8 @@ public class Portal : MonoBehaviour,IPlayerTrigger
         Destroy(gameObject);
     }
 
+    public bool TriggerRepeatedly => false;
+
     public Transform SpawnPoint => spawnPoint;
 }
 

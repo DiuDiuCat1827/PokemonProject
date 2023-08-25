@@ -86,20 +86,34 @@ public class PlayerController : MonoBehaviour, ISavable
         return true;
     }
 
+    IPlayerTrigger currentlyInTrigger;
+
     private void OnMoveOver()
     {
         var colliders = Physics2D.OverlapCircleAll(transform.position - new Vector3(0, character.offsetY), 0.2f, GameLayers.i.TriggerableLayers);
+        
+        IPlayerTrigger triggerable = null;
         foreach(var collider in colliders)
         {
-            var triggerable = collider.GetComponent<IPlayerTrigger>();
+            triggerable = collider.GetComponent<IPlayerTrigger>();
             if (triggerable != null)
             {
+                if(triggerable == currentlyInTrigger && !triggerable.TriggerRepeatedly)
+                {
+                    break;
+                 }
+                   
                 triggerable.OnPlayerTriggered(this);
+                currentlyInTrigger = triggerable;
                 break;
             }
         }
         //CheckForEncounters();
         //CheckIfInTrainerView();
+        if(colliders.Count() == 0 || triggerable != currentlyInTrigger)
+        {
+            currentlyInTrigger = null;
+        }
     }
 
     public string Name
