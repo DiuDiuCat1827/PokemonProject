@@ -10671,6 +10671,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1312104825944563270, guid: b0090f5ddc5e6e74c971f4335f9f4994, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 416bee6b1322ee044850ed50906a8173, type: 2}
     - target: {fileID: 4404367331009586636, guid: b0090f5ddc5e6e74c971f4335f9f4994, type: 3}
       propertyPath: uniqueId
       value: bffa4216-fc9f-457c-a211-a46d9ce9b006
@@ -10753,6 +10757,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: questToStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c7a4290359f4e24eba64e3aeec9c110, type: 2}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: You can use HM01 to cut tree.
+      objectReference: {fileID: 0}
     - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10800,10 +10816,10 @@ PrefabInstance:
     - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: 46ea12cbcc2f4c34c85df043e0369f6b, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
       propertyPath: count
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3310389889943483890, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
       propertyPath: dialog.lines.Array.size

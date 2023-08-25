@@ -425,6 +425,8 @@
 "Assets/Scripts/Pokemon/MoveBase.cs"
 "Assets/Scripts/Pokemon/Pokemon.cs"
 "Assets/Scripts/Pokemon/PokemonBase.cs"
+"Assets/Scripts/Quests/Quest.cs"
+"Assets/Scripts/Quests/QuestBase.cs"
 "Assets/Scripts/Saving/ISavable.cs"
 "Assets/Scripts/Saving/SavableEntity.cs"
 "Assets/Scripts/Saving/SavingSystem.cs"
