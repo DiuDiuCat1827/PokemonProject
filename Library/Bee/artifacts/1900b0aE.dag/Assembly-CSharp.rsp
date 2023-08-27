@@ -428,6 +428,8 @@
 "Assets/Scripts/Pokemon/PokemonGiver.cs"
 "Assets/Scripts/Quests/Quest.cs"
 "Assets/Scripts/Quests/QuestBase.cs"
+"Assets/Scripts/Quests/QuestList.cs"
+"Assets/Scripts/Quests/QuestObject.cs"
 "Assets/Scripts/Saving/ISavable.cs"
 "Assets/Scripts/Saving/SavableEntity.cs"
 "Assets/Scripts/Saving/SavingSystem.cs"
