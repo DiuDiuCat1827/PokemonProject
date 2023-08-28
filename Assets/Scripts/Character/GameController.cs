@@ -130,6 +130,9 @@ public class GameController : MonoBehaviour
         state = GameState.FreeRoam;
         battleSystem.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
+
+        var playerParty = playerController.GetComponent<PokemonParty>();
+        StartCoroutine(playerParty.CheckForEvolutions());
     }
 
     // Update is called once per frame

@@ -247,6 +247,18 @@ public class Pokemon
         return Moves.Count(m => m.Base == moveToCheck) > 0;
     }
 
+    public Evolution CheckForEvolution()
+    {
+        //这里应该是大于
+        return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel == level);
+    }
+
+    public void Evolve(Evolution evolution)
+    {
+        _base = evolution.EvolvesInfo;
+        CalculateStats();
+    }
+
     public void LearnMove(MoveBase moveToLearn)
     {
         if(Moves.Count > PokemonBase.MaxNumOfMoves)
