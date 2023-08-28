@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
         MoveDB.Init();
         ConditionData.Init();
         ItemDB.Init();
+        QuestDB.Init();
     }
 
     // Start is called before the first frame update

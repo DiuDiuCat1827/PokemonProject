@@ -400,6 +400,7 @@
 "Assets/Scripts/Data/ItemDB.cs"
 "Assets/Scripts/Data/MoveDB.cs"
 "Assets/Scripts/Data/PokemonDB.cs"
+"Assets/Scripts/Data/QuestDB.cs"
 "Assets/Scripts/GamePlayer/Dialog.cs"
 "Assets/Scripts/GamePlayer/DialogManager.cs"
 "Assets/Scripts/GamePlayer/GameLayers.cs"
@@ -437,6 +438,7 @@
 "Assets/Scripts/SceneManager/Portal.cs"
 "Assets/Scripts/SceneManager/SceneDetails.cs"
 "Assets/Scripts/UI/MenuController.cs"
+"Assets/Scripts/Util/ScriptableObjectDB.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
 -langversion:9.0
 
