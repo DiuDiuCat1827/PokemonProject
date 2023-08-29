@@ -21,6 +21,7 @@ public class EvolutionManager : MonoBehaviour
 
     public IEnumerator Evolve(Pokemon pokemon,Evolution evolution)
     {
+        Debug.Log("4");
         OnStartEvolution?.Invoke();
         evolutionUI.SetActive(true);
 

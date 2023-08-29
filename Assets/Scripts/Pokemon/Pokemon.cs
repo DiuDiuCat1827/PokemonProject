@@ -253,6 +253,12 @@ public class Pokemon
         return Base.Evolutions.FirstOrDefault(e => e.RequiredLevel == level);
     }
 
+    public Evolution CheckForEvolution(ItemBase item)
+    {
+        //这里应该是大于
+        return Base.Evolutions.FirstOrDefault(e => e.RequireItem == item);
+    }
+
     public void Evolve(Evolution evolution)
     {
         _base = evolution.EvolvesInfo;

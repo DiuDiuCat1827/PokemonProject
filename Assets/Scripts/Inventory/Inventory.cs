@@ -104,7 +104,7 @@ public class Inventory : MonoBehaviour,ISavable
 
     public ItemCategory GetCategoryFromItem(ItemBase item)
     {
-        if(item is RecoveryItem){
+        if(item is RecoveryItem || item is EvolutionItem){
             return ItemCategory.Items;
          }else if(item is PokeballItem)
          {

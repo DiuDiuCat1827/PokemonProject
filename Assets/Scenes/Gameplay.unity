@@ -595,8 +595,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: slots.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: tmSlots.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: slots.Array.data[5].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 950363dddb23b834fa68d3263d0c79e5, type: 2}
+    - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: slots.Array.data[5].count
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 434818948316709694, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: tmSlots.Array.data[0].item

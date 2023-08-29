@@ -1217,7 +1217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_53
+      name: stone
       rect:
         serializedVersion: 2
         x: 196
@@ -3054,6 +3054,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      objects_4: -211202143
       objects_118: -823847239
       objects_98: -1330260380
       objects_84: -1997469353
@@ -3070,7 +3071,6 @@ TextureImporter:
       objects_89: 619777448
       exclamation: 875260315
       objects_109: -494873690
-      objects_20: -357230674
       objects_3: 1628885332
       objects_119: 463732277
       objects_18: -1111882697
@@ -3116,9 +3116,9 @@ TextureImporter:
       objects_131: 355257306
       objects_87: 314568023
       objects_104: -765436269
-      objects_107: 156902548
       objects_7: -274693798
       objects_80: -691112060
+      objects_107: 156902548
       objects_22: 1447204714
       book: -1401657697
       objects_47: -2117183227
@@ -3149,6 +3149,7 @@ TextureImporter:
       objects_29: 1682891517
       objects_126: -266377149
       objects_67: 151049384
+      stone: 1834830257
       objects_0: 1206631412
       objects_46: 1655545667
       objects_6: 543103614
@@ -3163,9 +3164,9 @@ TextureImporter:
       objects_27: 1905077481
       objects_100: 1691813946
       objects_69: 1010365212
-      objects_53: 1834830257
-      objects_76: -1413016721
       objects_114: -767760338
+      objects_76: -1413016721
+      objects_130: 929485911
       objects_71: 295139213
       objects_36: -1463674636
       objects_37: -378225352
@@ -3187,13 +3188,12 @@ TextureImporter:
       objects_108: 1708520557
       objects_17: 348373809
       objects_68: -1870079362
-      objects_130: 929485911
       objects_111: -1689141042
       objects_61: -487025221
       objects_88: -88313123
-      objects_4: -211202143
       objects_127: -2121307173
       objects_128: -944223184
+      objects_20: -357230674
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
