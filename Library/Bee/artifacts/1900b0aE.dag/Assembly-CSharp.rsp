@@ -403,6 +403,7 @@
 "Assets/Scripts/Data/QuestDB.cs"
 "Assets/Scripts/GamePlayer/Dialog.cs"
 "Assets/Scripts/GamePlayer/DialogManager.cs"
+"Assets/Scripts/GamePlayer/EvolutionManager.cs"
 "Assets/Scripts/GamePlayer/GameLayers.cs"
 "Assets/Scripts/GamePlayer/GlobalSetting.cs"
 "Assets/Scripts/GamePlayer/Interactable.cs"
