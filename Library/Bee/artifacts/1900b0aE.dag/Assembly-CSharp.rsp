@@ -389,6 +389,7 @@
 "Assets/Scripts/Character/Character.cs"
 "Assets/Scripts/Character/CharacterAnimator.cs"
 "Assets/Scripts/Character/GameController.cs"
+"Assets/Scripts/Character/Healer.cs"
 "Assets/Scripts/Character/NPCController.cs"
 "Assets/Scripts/Character/TrainerControler.cs"
 "Assets/Scripts/Character/TrainerFov.cs"
