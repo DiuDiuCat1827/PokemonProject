@@ -350,6 +350,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22756b208189a5449ad1bcdeff5452cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1391424754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 305414025248292702, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+  m_PrefabInstance: {fileID: 1882595299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43fb7492d7b7cf42a7640cfc26afa09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1395161265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1056,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2877537335412711283, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3206033083810163737, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1175,6 +1190,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812307037194977997, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902134860129769161, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3917131076536529529, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
@@ -1881,6 +1900,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 11.390016
       objectReference: {fileID: 0}
+    - target: {fileID: 7246754250429985951, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7385037971558706866, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2322,6 +2345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 77648408}
   walletUI: {fileID: 1766617513}
+  countSelectorUI: {fileID: 1391424754}
 --- !u!1 &1882595304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8923396281121714322, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}

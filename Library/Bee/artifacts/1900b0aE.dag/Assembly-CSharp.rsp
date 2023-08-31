@@ -445,6 +445,7 @@
 "Assets/Scripts/SceneManager/LocationPortal.cs"
 "Assets/Scripts/SceneManager/Portal.cs"
 "Assets/Scripts/SceneManager/SceneDetails.cs"
+"Assets/Scripts/UI/CountSelectorUI.cs"
 "Assets/Scripts/UI/MenuController.cs"
 "Assets/Scripts/UI/WalletUI.cs"
 "Assets/Scripts/Util/ScriptableObjectDB.cs"

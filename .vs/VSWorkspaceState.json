@@ -2,13 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
-    "\\Assets\\Art",
-    "\\Assets\\Game",
-    "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\Battle",
-    "\\Assets\\Scripts\\GamePlayer",
-    "\\Assets\\Scripts\\Player",
-    "\\Assets\\Scripts\\Pokemon"
+    "\\Assets\\Scripts"
   ],
+  "SelectedNode": "\\Assets\\Scripts\\Items\\ShopController.cs",
   "PreviewInSolutionExplorer": false
 }
