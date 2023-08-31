@@ -123,6 +123,96 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &18223661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 202788954571357482, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: uniqueId
+      value: 638e7e6c-72ac-4a21-b531-514bc1c4b321
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360645, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_Name
+      value: Merchant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: questToComplete
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.data[0]
+      value: You lool tired,Please take rest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+--- !u!1 &18223662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2334197811828360645, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+  m_PrefabInstance: {fileID: 18223661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &18223663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18223662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d9487661c432a4488166ecdbd47ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &27560389
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Revive
   description: Revive pokemon
   icon: {fileID: 738371677, guid: 4b7c9e004f0c221448d99c6f5fbe3669, type: 3}
+  price: 100
+  isSellable: 1
   hpAmount: 0
   restoreMaxHP: 0
   ppAmount: 0
