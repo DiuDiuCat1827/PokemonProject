@@ -24,9 +24,14 @@ public class Wallet : MonoBehaviour
 
     public void TakeMoney(float amount)
     {
-        money += amount;
+        money -= amount;
         OnMoneyChanged?.Invoke();
     }
 
     public float Money => money;
+
+    public bool HasMoney(float amount)
+    {
+        return amount <= money;
+    }
 }

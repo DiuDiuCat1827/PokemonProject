@@ -447,6 +447,7 @@
 "Assets/Scripts/SceneManager/SceneDetails.cs"
 "Assets/Scripts/UI/CountSelectorUI.cs"
 "Assets/Scripts/UI/MenuController.cs"
+"Assets/Scripts/UI/ShopUI.cs"
 "Assets/Scripts/UI/WalletUI.cs"
 "Assets/Scripts/Util/ScriptableObjectDB.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
