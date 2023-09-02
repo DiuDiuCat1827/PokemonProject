@@ -209,6 +209,7 @@ MonoBehaviour:
     - You Win,Good
   exclamation: {fileID: 1909473795791895777}
   fov: {fileID: 1909473794363238962}
+  trainerAppearsClip: {fileID: 8300000, guid: 499fde95fe72c74418f019ebc6a5cc9f, type: 3}
 --- !u!114 &1909473794044776726
 MonoBehaviour:
   m_ObjectHideFlags: 0

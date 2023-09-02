@@ -24,6 +24,10 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] InventoryUI inventoryUI;
     MoveBase moveToLearn;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip wildBattleMusic;
+    [SerializeField] AudioClip trainerBattleMusic;
+    [SerializeField] AudioClip battleVictoryMusic;
 
     public event Action<bool> OnBattleOver;
 
@@ -48,7 +52,9 @@ public class BattleSystem : MonoBehaviour
         this.wildPokemon = wildPokemon;
         player = playerParty.GetComponent<PlayerController>();
         isTrainerBattle = false;
+        AudioManager.i.PlayMusic(wildBattleMusic);
         StartCoroutine(SetupBattle());
+
     }
 
     public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)
@@ -60,6 +66,7 @@ public class BattleSystem : MonoBehaviour
         player = playerParty.GetComponent<PlayerController>();
         trainer = trainerParty.GetComponent<TrainerControler>();
 
+        AudioManager.i.PlayMusic(trainerBattleMusic,fade:true);
         StartCoroutine(SetupBattle());
     }
 
@@ -240,6 +247,16 @@ public class BattleSystem : MonoBehaviour
 
         if (!faintedUnit.IsPlayerUnit)
         {
+            bool battleWon = true;
+            if (isTrainerBattle)
+            {
+                battleWon = trainerParty.GetHealthyPokemon() == null;
+            }
+            if (battleWon)
+            {
+                AudioManager.i.PlayMusic(battleVictoryMusic,fade:true);
+            }
+
             int expYield = faintedUnit.Pokemon.Base.ExpYield;
             int enemyLevel = faintedUnit.Pokemon.Level;
 

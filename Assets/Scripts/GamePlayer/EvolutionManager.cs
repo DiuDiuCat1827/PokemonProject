@@ -9,6 +9,9 @@ public class EvolutionManager : MonoBehaviour
     [SerializeField] GameObject evolutionUI;
     [SerializeField] Image pokemonImage;
 
+
+    [SerializeField] AudioClip evolutionMusic;
+
     public event Action OnStartEvolution;
     public event Action OnCompleteEvolution;
 
@@ -21,9 +24,10 @@ public class EvolutionManager : MonoBehaviour
 
     public IEnumerator Evolve(Pokemon pokemon,Evolution evolution)
     {
-        Debug.Log("4");
         OnStartEvolution?.Invoke();
         evolutionUI.SetActive(true);
+
+        AudioManager.i.PlayMusic(evolutionMusic);
 
         pokemonImage.sprite = pokemon.Base.FrontSprite;
         yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} is evolving");
