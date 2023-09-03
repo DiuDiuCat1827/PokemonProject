@@ -342,12 +342,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
-    level: 2
-  - _base: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
-    level: 3
-  - _base: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
-    level: 5
+  - pokemon: {fileID: 0}
+    levelRange: {x: 0, y: 0}
+    chancePercentage: 0
+  - pokemon: {fileID: 0}
+    levelRange: {x: 0, y: 0}
+    chancePercentage: 0
+  - pokemon: {fileID: 0}
+    levelRange: {x: 0, y: 0}
+    chancePercentage: 0
 --- !u!114 &1076786756 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 31130169611549902, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
@@ -488,12 +491,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
-    level: 2
-  - _base: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
-    level: 3
-  - _base: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
-    level: 5
+  - pokemon: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
+    levelRange: {x: 2, y: 4}
+    chancePercentage: 70
+  - pokemon: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
+    levelRange: {x: 3, y: 7}
+    chancePercentage: 20
+  - pokemon: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
+    levelRange: {x: 2, y: 7}
+    chancePercentage: 10
 --- !u!114 &1766617513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3744763631427330396, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
@@ -3213,9 +3219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
-    level: 2
-  - _base: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
-    level: 3
-  - _base: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
-    level: 5
+  - pokemon: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
+    levelRange: {x: 2, y: 4}
+    chancePercentage: 20
+  - pokemon: {fileID: 11400000, guid: be796506c2bb0c64eadcd388c1780db2, type: 2}
+    levelRange: {x: 3, y: 7}
+    chancePercentage: 70
+  - pokemon: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
+    levelRange: {x: 2, y: 7}
+    chancePercentage: 10
