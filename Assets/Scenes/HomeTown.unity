@@ -8184,6 +8184,106 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1baf9d61c9af90948a22be66b8939a43, type: 3}
+--- !u!1001 &968984291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 202788954571357482, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: uniqueId
+      value: 6862cecc-ac63-4904-823b-cfb6fced0cc6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360645, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_Name
+      value: PokemonGiver
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: questToStart
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: questToComplete
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a23596a84cb14b4ab01928243604f06, type: 2}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360648, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334197811828360651, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+--- !u!1 &968984292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2334197811828360645, guid: 89f96f12e0da8fd4f97139192fb1cfa9, type: 3}
+  m_PrefabInstance: {fileID: 968984291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &968984293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968984292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448538e75a61ee43b272a07ebadf990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemonToGive:
+    _base: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
+    level: 5
+  dialog:
+    lines:
+    - Give you pokemon
 --- !u!1 &1780847081
 GameObject:
   m_ObjectHideFlags: 0
