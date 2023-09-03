@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxList:
   - id: 0
-    clip: {fileID: 8300000, guid: dfa52583b322b7f4bbe19e5f54be5720, type: 3}
+    clip: {fileID: 8300000, guid: e3f706c2e31ae184ab90159947b1bcc5, type: 3}
   - id: 1
     clip: {fileID: 8300000, guid: dfa52583b322b7f4bbe19e5f54be5720, type: 3}
   musicPlayer: {fileID: 340245546117058958}

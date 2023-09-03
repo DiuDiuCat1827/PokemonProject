@@ -179,6 +179,7 @@ public class BattleSystem : MonoBehaviour
           sourceUnit.PlayAttackAnimation();
           AudioManager.i.PlaySfx(move.Base.Sound);
 
+          yield return new WaitForSeconds(1f);
           targetUnit.PlayHitAnimation();
           AudioManager.i.PlaySfx(AudioId.Hit);
 

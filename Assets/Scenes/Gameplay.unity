@@ -1000,6 +1000,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: fadeDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.data[2].id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.data[3].id
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e3f706c2e31ae184ab90159947b1bcc5, type: 3}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 91fea13559864f548bcec07f9423c48e, type: 3}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a60e91f36a79bb4fb981355d70ce6f9, type: 3}
+    - target: {fileID: 1646204818163322869, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
+      propertyPath: sfxList.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a60e91f36a79bb4fb981355d70ce6f9, type: 3}
     - target: {fileID: 1661649142274265927, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
       propertyPath: m_RootOrder
       value: 6
