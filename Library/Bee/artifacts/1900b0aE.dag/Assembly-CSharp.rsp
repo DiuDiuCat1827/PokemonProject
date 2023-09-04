@@ -408,6 +408,7 @@
 "Assets/Scripts/Dialogues/ChoiceText.cs"
 "Assets/Scripts/Dialogues/Dialog.cs"
 "Assets/Scripts/Dialogues/DialogManager.cs"
+"Assets/Scripts/GamePlayer/CultableTree.cs"
 "Assets/Scripts/GamePlayer/EvolutionManager.cs"
 "Assets/Scripts/GamePlayer/GameLayers.cs"
 "Assets/Scripts/GamePlayer/GlobalSetting.cs"

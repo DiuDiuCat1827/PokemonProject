@@ -50,7 +50,7 @@ TagManager:
   - name: LongGrass
     uniqueID: 933743735
     locked: 0
-  - name: Player
+  - name: Objects
     uniqueID: 876844245
     locked: 0
   - name: Battle
