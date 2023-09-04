@@ -6,6 +6,20 @@ using System.Linq;
 public class MapArea : MonoBehaviour
 {
     [SerializeField] List<PokemonEncounterRecord> wildPokemons;
+    
+    [HideInInspector]
+    [SerializeField]  int totalChance = 0;
+    private void OnValidate()
+    {
+        totalChance = 0;
+        foreach(var record in wildPokemons)
+        {
+            record.chanceLower = totalChance;
+            record.chanceUpper = totalChance + record.chancePercentage;
+
+            totalChance = totalChance + record.chancePercentage;
+        }
+    }
 
     private void Start()
     {

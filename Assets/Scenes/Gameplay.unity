@@ -351,6 +351,7 @@ MonoBehaviour:
   - pokemon: {fileID: 0}
     levelRange: {x: 0, y: 0}
     chancePercentage: 0
+  totalChance: 0
 --- !u!114 &1076786756 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 31130169611549902, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
@@ -500,6 +501,7 @@ MonoBehaviour:
   - pokemon: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
     levelRange: {x: 2, y: 7}
     chancePercentage: 10
+  totalChance: 100
 --- !u!114 &1766617513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3744763631427330396, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
@@ -3228,3 +3230,4 @@ MonoBehaviour:
   - pokemon: {fileID: 11400000, guid: 60405bcb3df8fd844a8a6c7fa8508959, type: 2}
     levelRange: {x: 2, y: 7}
     chancePercentage: 10
+  totalChance: 100
