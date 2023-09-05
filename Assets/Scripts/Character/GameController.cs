@@ -101,6 +101,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void StartCutsceneState()
+    {
+        state = GameState.Cutscene;
+    }
+
+    public void StartFreeRoamState()
+    {
+        state = GameState.FreeRoam;
+    }
+
     public void OnEnterTrainerView(TrainerControler trainer)
     {
         state = GameState.Cutscene;

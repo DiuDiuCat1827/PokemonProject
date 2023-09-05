@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Cutscene : MonoBehaviour, IPlayerTrigger
+{
+    [SerializeReference]
+    [SerializeField] List<CutsceneAction> actions;
+
+    public bool TriggerRepeatedly => false;
+
+    public IEnumerator Play()
+    {
+        GameController.Instance.StartCutsceneState();
+        var i = 1;
+        foreach(var action in actions)
+        {
+            yield return action.Play();
+        }
+
+        GameController.Instance.StartFreeRoamState();
+    }
+
+    public void AddAction(CutsceneAction action)
+    {
+        action.Name = action.GetType().ToString();
+        actions.Add(action);
+    }
+
+    public void OnPlayerTriggered(PlayerController player)
+    {
+        player.Character.Animator.IsMoving = false;
+        StartCoroutine(Play());
+    }
+}
