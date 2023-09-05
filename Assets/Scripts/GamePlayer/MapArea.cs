@@ -9,40 +9,47 @@ public class MapArea : MonoBehaviour
     [SerializeField] List<PokemonEncounterRecord> wildPokemonsInWater;
     
     [HideInInspector]
-    [SerializeField]  int totalChance = 0;
+    [SerializeField]  int totalChanceGrass = 0;
 
     [HideInInspector]
     [SerializeField]  int totalChanceWater = 0;
     private void OnValidate()
     {
-        totalChance = 0;
-        foreach(var record in wildPokemons)
-        {
-            record.chanceLower = totalChance;
-            record.chanceUpper = totalChance + record.chancePercentage;
-
-            totalChance = totalChance + record.chancePercentage;
-        }
-
-        totalChanceWater = 0;
-        foreach(var record in wildPokemonsInWater)
-        {
-            record.chanceLower = totalChanceWater;
-            record.chanceUpper = totalChanceWater + record.chancePercentage;
-
-            totalChanceWater = totalChanceWater + record.chancePercentage;
-        }
+         CalculateChancePercentage();
     }
 
     private void Start()
     {
-        int totalChance = 0;
-        foreach(var record in wildPokemons)
-        {
-            record.chanceLower = totalChance;
-            record.chanceUpper = totalChance + record.chancePercentage;
+        CalculateChancePercentage();
+    }
 
-            totalChance = totalChance + record.chancePercentage;
+    void CalculateChancePercentage()
+    {
+         totalChanceGrass = -1;
+        totalChanceWater = -1;
+
+        if(wildPokemons.Count > 0)
+        {
+            totalChanceGrass = 0;
+            foreach(var record in wildPokemons)
+            {
+            record.chanceLower = totalChanceGrass;
+            record.chanceUpper = totalChanceGrass + record.chancePercentage;
+
+            totalChanceGrass = totalChanceGrass + record.chancePercentage;
+            }
+        }
+        
+        if(wildPokemonsInWater.Count > 0)
+        {
+            totalChanceWater = 0;
+            foreach(var record in wildPokemonsInWater)
+            {
+              record.chanceLower = totalChanceWater;
+              record.chanceUpper = totalChanceWater + record.chancePercentage;
+
+              totalChanceWater = totalChanceWater + record.chancePercentage;
+            }
         }
     }
 

@@ -352,8 +352,8 @@ MonoBehaviour:
     levelRange: {x: 0, y: 0}
     chancePercentage: 0
   wildPokemonsInWater: []
-  totalChance: 0
-  totalChanceWater: 0
+  totalChanceGrass: 0
+  totalChanceWater: -1
 --- !u!114 &1076786756 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 31130169611549902, guid: ddc926b3136745b43a8a97b0aeb8a234, type: 3}
@@ -504,8 +504,8 @@ MonoBehaviour:
     levelRange: {x: 2, y: 7}
     chancePercentage: 10
   wildPokemonsInWater: []
-  totalChance: 100
-  totalChanceWater: 0
+  totalChanceGrass: 100
+  totalChanceWater: -1
 --- !u!114 &1766617513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3744763631427330396, guid: 634b8db6ae3cc0b4da7a505906f1d0a0, type: 3}
@@ -3262,5 +3262,5 @@ MonoBehaviour:
   - pokemon: {fileID: 11400000, guid: 5cfaabe81e1db07459565484a4911bc5, type: 2}
     levelRange: {x: 5, y: 7}
     chancePercentage: 100
-  totalChance: 100
+  totalChanceGrass: 100
   totalChanceWater: 100
