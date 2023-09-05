@@ -7,7 +7,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum BattleState { Start, ActionSelection, MoveSelection, RunningTurn, Busy ,PartyScreen ,AboutToUse,MoveToForget, BattleOver,Bag, None}
+
 public enum BattleAction { Move,SwitchPokemon,UseItem,Run}
+
+public enum BattleTrigger { LongGrass, Water}
 
 public class BattleSystem : MonoBehaviour
 {
