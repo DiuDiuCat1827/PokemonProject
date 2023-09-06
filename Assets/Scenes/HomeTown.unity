@@ -9298,6 +9298,8 @@ MonoBehaviour:
   actions:
   - rid: 3320589013537783813
   - rid: 3320589013537783815
+  - rid: 3320589031813939200
+  - rid: 3320589031813939201
   references:
     version: 2
     RefIds:
@@ -9305,7 +9307,10 @@ MonoBehaviour:
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
         name: MoveAction
-        character: {fileID: 2334197811980983876}
+        waitForCompletion: 1
+        actor:
+          isPlayer: 0
+          character: {fileID: 2334197811980983876}
         movePatterns:
         - {x: 0, y: 1}
         - {x: 3, y: 0}
@@ -9313,9 +9318,32 @@ MonoBehaviour:
       type: {class: DialogAction, ns: , asm: Assembly-CSharp}
       data:
         name: DialogAction
+        waitForCompletion: 1
         dialog:
           lines:
           - Don\t leave yet! Professor  is waiting for you! follow me.
+    - rid: 3320589031813939200
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: MoveAction
+        waitForCompletion: 0
+        actor:
+          isPlayer: 0
+          character: {fileID: 2334197811980983876}
+        movePatterns:
+        - {x: 0, y: -6}
+        - {x: -7, y: 0}
+    - rid: 3320589031813939201
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: MoveAction
+        waitForCompletion: 1
+        actor:
+          isPlayer: 1
+          character: {fileID: 0}
+        movePatterns:
+        - {x: 0, y: -6}
+        - {x: -7, y: 0}
 --- !u!4 &1247969632
 Transform:
   m_ObjectHideFlags: 0

@@ -15,7 +15,15 @@ public class Cutscene : MonoBehaviour, IPlayerTrigger
         var i = 1;
         foreach(var action in actions)
         {
-            yield return action.Play();
+            if (action.WaitForCompletion)
+            {
+                yield return action.Play();
+            }
+            else
+            {
+                StartCoroutine(action.Play());
+            }
+            
         }
 
         GameController.Instance.StartFreeRoamState();

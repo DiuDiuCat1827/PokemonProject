@@ -185,9 +185,9 @@ public class GameController : MonoBehaviour
                 menuController.OpenMenu();
                 state = GameState.Menu;
             }
-
-       
-
+        }else if(state == GameState.Cutscene){
+            playerController.Character.HandleUpdate();
+        
         }else if(state == GameState.Battle)
         {
             battleSystem.HandleUpdate();
