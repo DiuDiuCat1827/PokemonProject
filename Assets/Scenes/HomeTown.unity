@@ -9312,7 +9312,6 @@ MonoBehaviour:
           isPlayer: 0
           character: {fileID: 2334197811980983876}
         movePatterns:
-        - {x: 0, y: 1}
         - {x: 3, y: 0}
     - rid: 3320589013537783815
       type: {class: DialogAction, ns: , asm: Assembly-CSharp}
