@@ -18,6 +18,12 @@ public class CutsceneEditor : Editor
         else if (GUILayout.Button("Add Move Actor Action"))
         {
             cutscene.AddAction(new MoveAction());
+        }else if (GUILayout.Button("Add Turn Actor Action"))
+        {
+            cutscene.AddAction(new TurnActorAction());
+        }else if (GUILayout.Button("Add Teleport Object Action"))
+        {
+            cutscene.AddAction(new TeleportObjectAction());
         }
 
         base.OnInspectorGUI();

@@ -403,6 +403,8 @@
 "Assets/Scripts/Cutscenes/CutsceneAction.cs"
 "Assets/Scripts/Cutscenes/DialogAction.cs"
 "Assets/Scripts/Cutscenes/MoveAction.cs"
+"Assets/Scripts/Cutscenes/TeleportObjectAction.cs"
+"Assets/Scripts/Cutscenes/TurnActorAction.cs"
 "Assets/Scripts/Data/ConditionData.cs"
 "Assets/Scripts/Data/ItemDB.cs"
 "Assets/Scripts/Data/MoveDB.cs"
