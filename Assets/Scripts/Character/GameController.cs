@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using GDEUtils.StateMachine;
 
 public  enum GameState { FreeRoam,Battle, Dialog, Menu,PartyScreen, Bag, Cutscene,Paused, Evolution, Shop }
 
@@ -19,10 +19,10 @@ public class GameController : MonoBehaviour
     bool battleLost = false;
 
     GameState state;
-
     GameState prevState;
-
     GameState stateBeforeEvolution;
+
+    public  StateMachine<GameController> StateMachine { get;private set;}
 
     MenuController menuController;
 
@@ -50,6 +50,10 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     private  void Start()
     {
+        StateMachine = new StateMachine<GameController>(this);
+        StateMachine.ChangeState(FreeRoamState.i);
+
+
         battleSystem.OnBattleOver += EndBattle;
 
         partyScreen.Init();
@@ -177,15 +181,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(state == GameState.FreeRoam)
-        {
-            playerController.HandleUpdate();
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                menuController.OpenMenu();
-                state = GameState.Menu;
-            }
-        }else if(state == GameState.Cutscene){
+        StateMachine.Execute();
+        if(state == GameState.Cutscene){
             playerController.Character.HandleUpdate();
         
         }else if(state == GameState.Battle)
@@ -271,6 +268,19 @@ public class GameController : MonoBehaviour
             StartCoroutine(Fader.i.FadeOut(0.5f));
         }
 
+    }
+
+    private void OnGUI()
+    {
+        var style = new GUIStyle();
+        style.fontSize = 24;
+
+
+        GUILayout.Label("STATE STACK", style);
+        foreach(var state in StateMachine.StateStack)
+        {
+            GUILayout.Label(state.GetType().ToString(),style);
+        }
     }
 
     public GameState State => state;

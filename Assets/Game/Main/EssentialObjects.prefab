@@ -3455,6 +3455,8 @@ GameObject:
   - component: {fileID: 6200281691380393960}
   - component: {fileID: 7746558318742966769}
   - component: {fileID: 8357774714201959971}
+  - component: {fileID: 3024560123826646100}
+  - component: {fileID: 5414683060525277621}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3590,6 +3592,30 @@ MonoBehaviour:
   evolutionUI: {fileID: 3536223540735652662}
   pokemonImage: {fileID: 8466169660083718595}
   evolutionMusic: {fileID: 8300000, guid: f2c6b0d6453a4e748b33dccb6e65ce1f, type: 3}
+--- !u!114 &3024560123826646100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396282263416657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996892376958b384787e93ea2f61a6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5414683060525277621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396282263416657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e5062517945c043bcb26100c32edfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &600555691470493679
 PrefabInstance:
   m_ObjectHideFlags: 0

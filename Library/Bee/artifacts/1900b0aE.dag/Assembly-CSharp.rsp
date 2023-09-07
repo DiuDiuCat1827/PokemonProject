@@ -431,6 +431,8 @@
 "Assets/Scripts/GamePlayer/StoryItem.cs"
 "Assets/Scripts/GamePlayer/SurfableWater.cs"
 "Assets/Scripts/GamePlayer/Wallet.cs"
+"Assets/Scripts/GameStates/FreeRoamState.cs"
+"Assets/Scripts/GameStates/GameMenuState.cs"
 "Assets/Scripts/Items/EvolutionItem.cs"
 "Assets/Scripts/Items/Inventory.cs"
 "Assets/Scripts/Items/ItemBase.cs"
@@ -466,6 +468,8 @@
 "Assets/Scripts/UI/WalletUI.cs"
 "Assets/Scripts/Util/ScriptableObjectDB.cs"
 "Assets/Scripts/Util/SpriteAnimator.cs"
+"Assets/Scripts/Util/StateMachine/State.cs"
+"Assets/Scripts/Util/StateMachine/StateMachine.cs"
 -langversion:9.0
 
 /deterministic
