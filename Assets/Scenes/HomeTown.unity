@@ -9305,6 +9305,8 @@ MonoBehaviour:
   - rid: 3320589034287005698
   - rid: 3320589034287005701
   - rid: 3320589034287005700
+  - rid: 3320589050599440387
+  - rid: 3320589050599440388
   references:
     version: 2
     RefIds:
@@ -9393,6 +9395,18 @@ MonoBehaviour:
         - {x: -2, y: 0}
         - {x: 0, y: 5}
         - {x: 7, y: 0}
+    - rid: 3320589050599440387
+      type: {class: FadeInAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: FadeInAction
+        waitForCompletion: 1
+        duration: 0.5
+    - rid: 3320589050599440388
+      type: {class: FadeOutAction, ns: , asm: Assembly-CSharp}
+      data:
+        name: FadeOutAction
+        waitForCompletion: 1
+        duration: 0.5
 --- !u!4 &1247969632
 Transform:
   m_ObjectHideFlags: 0
