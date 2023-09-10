@@ -569,7 +569,7 @@ public class BattleSystem : MonoBehaviour
 
     void openPartyScreen()
     {
-        partyScreen.CalledFrom = state;
+        //partyScreen.CalledFrom = state;
         state = BattleState.PartyScreen;
         partyScreen.SetPartyData();
         partyScreen.gameObject.SetActive(true);
@@ -705,18 +705,18 @@ public class BattleSystem : MonoBehaviour
             }
 
             partyScreen.gameObject.SetActive(false);
-
-            if (partyScreen.CalledFrom == BattleState.ActionSelection)
-            {
-                StartCoroutine(RunTurns(BattleAction.SwitchPokemon));
-            }
-            else
-            {
-                state = BattleState.Busy;
-                bool isTrainerAboutToUse = partyScreen.CalledFrom == BattleState.AboutToUse;
-                StartCoroutine(SwitchPokemon(selectedMember, isTrainerAboutToUse));
-            }
-            partyScreen.CalledFrom = BattleState.None;
+            
+            //if (partyScreen.CalledFrom == BattleState.ActionSelection)
+            //{
+            //   StartCoroutine(RunTurns(BattleAction.SwitchPokemon));
+            //}
+            //else
+            //{
+            //    state = BattleState.Busy;
+            //    bool isTrainerAboutToUse = partyScreen.CalledFrom == BattleState.AboutToUse;
+            //    StartCoroutine(SwitchPokemon(selectedMember, isTrainerAboutToUse));
+            //}
+            //partyScreen.CalledFrom = BattleState.None;
         };
 
        
@@ -729,19 +729,19 @@ public class BattleSystem : MonoBehaviour
             }
             partyScreen.gameObject.SetActive(false);
 
-            if(partyScreen.CalledFrom == BattleState.AboutToUse)
-            {
-               
-                StartCoroutine(SendNextTrainerPokemon());
-            }
-            else
-            {
-                ActionSelection();
-            }
-            partyScreen.CalledFrom = BattleState.None;
+            //if(partyScreen.CalledFrom == BattleState.AboutToUse)
+            //{
+            //   
+            //    StartCoroutine(SendNextTrainerPokemon());
+            //}
+            //else
+            //{
+            //    ActionSelection();
+            //}
+            //partyScreen.CalledFrom = BattleState.None;
         };
 
-        partyScreen.HandleUpdate(onSelected,onBack);
+        //partyScreen.HandleUpdate(onSelected,onBack);
 
   
     }

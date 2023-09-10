@@ -141,7 +141,7 @@ public class InventoryUI : MonoBehaviour
                 ClosePartyScreen();
             };
 
-            partyScreen.HandleUpdate(onSelected, onBackPartyScreen);
+          
         }else if(inventoryState == InventoryUIState.MoveToForget)
         {
             Action<int> onMoveSelected = (int moveIndex) =>

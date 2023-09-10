@@ -433,6 +433,7 @@
 "Assets/Scripts/GamePlayer/Wallet.cs"
 "Assets/Scripts/GameStates/FreeRoamState.cs"
 "Assets/Scripts/GameStates/GameMenuState.cs"
+"Assets/Scripts/GameStates/GamePartyState.cs"
 "Assets/Scripts/Items/EvolutionItem.cs"
 "Assets/Scripts/Items/Inventory.cs"
 "Assets/Scripts/Items/ItemBase.cs"

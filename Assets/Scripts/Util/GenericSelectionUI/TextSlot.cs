@@ -9,7 +9,8 @@ public class TextSlot :MonoBehaviour, ISelectableItem
 
     Color orginalColor;
 
-    private void Awake()
+
+    public void Init()
     {
         orginalColor = text.color;
     }

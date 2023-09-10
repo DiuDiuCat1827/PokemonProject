@@ -177,6 +177,7 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         StateMachine.Execute();
+
         if(state == GameState.Cutscene){
             playerController.Character.HandleUpdate();
         
@@ -189,18 +190,6 @@ public class GameController : MonoBehaviour
         }else if(state == GameState.Menu)
         {
 
-        }else if(state == GameState.PartyScreen)
-        {
-            
-            Action onSelected = () => {
-                //TODO:Go to Summary Screen
-            };
-            
-            Action onBack= () =>{
-                partyScreen.gameObject.SetActive(false);
-                state = GameState.FreeRoam;
-            };
-            partyScreen.HandleUpdate(onSelected, onBack);
         }else if(state == GameState.Bag)
         {
             Action onBack= () =>{
