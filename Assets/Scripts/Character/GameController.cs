@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
 
     public  StateMachine<GameController> StateMachine { get;private set;}
 
-    MenuController menuController;
+
 
     public SceneDetails CurrentScene { get; private set; }
     public SceneDetails PrevScene { get; private set; }
@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
 
-        menuController = GetComponent<MenuController>();
+
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -70,12 +70,7 @@ public class GameController : MonoBehaviour
             state = prevState;
         };
 
-        menuController.onBack += () =>
-        {
-            state = GameState.FreeRoam;
-        };
 
-        menuController.onMenuSelected += OnMenuSelected;
 
         EvolutionManager.i.OnStartEvolution += () =>{
             stateBeforeEvolution = state;
@@ -193,7 +188,7 @@ public class GameController : MonoBehaviour
             DialogManager.Instance.HandleUpdate();
         }else if(state == GameState.Menu)
         {
-            menuController.HandleUpdate();
+
         }else if(state == GameState.PartyScreen)
         {
             
