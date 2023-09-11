@@ -31,10 +31,17 @@ public class GamePartyState : State<GameController>
 
     void OnPokemonSelected(int selection)
     {
-        if(selection == 0)
+        if(gameController.StateMachine.GetPrevState() == InventoryState.i)
         {
-            gameController.StateMachine.Push(GamePartyState.i);
+            //Use Item
+            Debug.Log("Use item ");
         }
+        else
+        {
+            //TODO open summary screen
+            Debug.Log($"Selected pokemon ai index {selection} ");
+        }
+        
     }
 
     public override void Exit()
@@ -48,4 +55,6 @@ public class GamePartyState : State<GameController>
     {
         gameController.StateMachine.Pop();
     }
+
+
 }

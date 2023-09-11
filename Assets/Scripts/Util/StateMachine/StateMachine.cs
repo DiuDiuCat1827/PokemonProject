@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 
 namespace GDEUtils.StateMachine
 {
@@ -49,6 +49,11 @@ namespace GDEUtils.StateMachine
             StateStack.Push(newState);
             CurrentState = newState;
             CurrentState.Enter(owner);
+        }
+
+        public State<T> GetPrevState()
+        {
+            return StateStack.ElementAt(1);
         }
     }
 }

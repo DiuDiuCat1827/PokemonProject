@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 3668035830104818866}
   - component: {fileID: 2656480982694503856}
   - component: {fileID: 6286441248152880346}
+  - component: {fileID: 3794180355533558644}
   m_Layer: 5
   m_Name: ItemSlotUI
   m_TagString: Untagged
@@ -261,3 +262,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 2398403849709479730}
   countText: {fileID: 5714347940087644359}
+--- !u!114 &3794180355533558644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848486413393228159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2398403849709479730}
