@@ -149,7 +149,7 @@ public class InventoryUI : SelectionUI<TextSlot>
 
         if(selectedCategory == (int) ItemCategory.Pokeballs)
         {
-            StartCoroutine(UseItem());
+            //StartCoroutine(UseItem());
         }
         else
         {
@@ -162,55 +162,7 @@ public class InventoryUI : SelectionUI<TextSlot>
         }
     }
 
-    IEnumerator UseItem()
-    {
-
-        inventoryState = InventoryUIState.Busy;
-
-        yield return HandleTmItems();
-
-        var item = inventory.GetItem(selectedItem, selectedCategory);
-        var pokemon = partyScreen.Selectedmember;
-
-        // handle Evolution Items
-        if(item is EvolutionItem)
-        {
-            var evolution = pokemon.CheckForEvolution(item);
-            if(evolution != null)
-            {
-                yield return  EvolutionManager.i.Evolve(pokemon, evolution);
-            }
-            else
-            {
-                yield return DialogManager.Instance.ShowDialogText($"It won't have any affect!");
-                ClosePartyScreen();
-                yield break;
-            }
-        }
-
-        var useItem =  inventory.UseItem(selectedItem, partyScreen.Selectedmember, selectedCategory);
-        if(useItem != null)
-        {
-            if (useItem is RecoveryItem)
-            {
-                yield return DialogManager.Instance.ShowDialogText($"The Player used {useItem.Name}");
-            }
-           
-
-            onItemUsed?.Invoke(useItem);
-        }
-        else
-        {
-            Debug.Log(selectedCategory);
-            if(selectedCategory == (int)ItemCategory.Items)
-            {
-                yield return DialogManager.Instance.ShowDialogText($"It won't have any affect!");
-            }
-          
-        }
-
-        ClosePartyScreen();
-    }
+    
 
     IEnumerator HandleTmItems()
     {
@@ -340,5 +292,9 @@ public class InventoryUI : SelectionUI<TextSlot>
         moveToLearn = null;
         inventoryState = InventoryUIState.ItemSelection;
     }
+
+    public ItemBase SelectedItem => inventory.GetItem(selectedItem, selectedCategory);
+
+    public int SelectedCategory => selectedCategory;
 }
 

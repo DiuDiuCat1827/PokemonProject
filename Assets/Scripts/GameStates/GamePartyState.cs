@@ -34,7 +34,7 @@ public class GamePartyState : State<GameController>
         if(gameController.StateMachine.GetPrevState() == InventoryState.i)
         {
             //Use Item
-            Debug.Log("Use item ");
+            StartCoroutine(GoToUseItemState());
         }
         else
         {
@@ -42,6 +42,12 @@ public class GamePartyState : State<GameController>
             Debug.Log($"Selected pokemon ai index {selection} ");
         }
         
+    }
+
+    IEnumerator GoToUseItemState()
+    {
+        yield return gameController.StateMachine.PushAndWait(UseItemState.i);
+        gameController.StateMachine.Pop();
     }
 
     public override void Exit()
