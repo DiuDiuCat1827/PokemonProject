@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GDEUtils.StateMachine;
+using System.Linq;
 
 public class UseItemState : State<GameController>
 {
@@ -106,8 +107,29 @@ public class UseItemState : State<GameController>
         {
             yield return DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} is trying to learn {tmItem.Move.Name}!");
             yield return DialogManager.Instance.ShowDialogText($"But it cannot learn more than {PokemonBase.MaxNumOfMoves} moves");
-            //yield return ChooseMoveToForget(pokemon, tmItem.Move);
-            //yield return new WaitUntil(() => inventoryState != InventoryUIState.MoveToForget);
+            
+            yield return DialogManager.Instance.ShowDialogText($"Choose a move you wan't to forget ", true, false);
+
+            MoveToForgetState.i.NewMove = tmItem.Move;
+            MoveToForgetState.i.CurrentMoves = pokemon.Moves.Select(m => m.Base).ToList();
+            yield return gameController.StateMachine.PushAndWait(MoveToForgetState.i);
+
+            int moveIndex = MoveToForgetState.i.Selection;
+          
+
+            if (moveIndex == PokemonBase.MaxNumOfMoves || moveIndex == -1)
+            {
+                //Do not learn the new move
+                yield return StartCoroutine(DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} did not learn {tmItem.Move}"));
+            }
+            else
+            {
+                //Forget the selected move and learn new move 
+                var selectedMove = pokemon.Moves[moveIndex].Base;
+                yield return StartCoroutine(DialogManager.Instance.ShowDialogText($"{pokemon.Base.Name} forgot {selectedMove.Name} and learn {tmItem.Move.Name}"));
+                //forget the select move and learn new move
+                pokemon.Moves[moveIndex] = new Move(tmItem.Move);
+            }
         }
     }
 

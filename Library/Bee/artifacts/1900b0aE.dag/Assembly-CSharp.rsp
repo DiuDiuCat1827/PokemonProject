@@ -435,6 +435,7 @@
 "Assets/Scripts/GameStates/GameMenuState.cs"
 "Assets/Scripts/GameStates/GamePartyState.cs"
 "Assets/Scripts/GameStates/InventoryState.cs"
+"Assets/Scripts/GameStates/MoveToForgetState.cs"
 "Assets/Scripts/GameStates/UseItemState.cs"
 "Assets/Scripts/Items/EvolutionItem.cs"
 "Assets/Scripts/Items/Inventory.cs"
