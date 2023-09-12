@@ -3461,6 +3461,7 @@ GameObject:
   - component: {fileID: 8669058068289362007}
   - component: {fileID: 5286738184517357748}
   - component: {fileID: 1557985439450022813}
+  - component: {fileID: 1241206629337034544}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3673,6 +3674,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSelectionUI: {fileID: 7031802976675104959}
+--- !u!114 &1241206629337034544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396282263416657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4d82f095c520e419200e0f00503239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleSystem: {fileID: 8923396280226712424}
 --- !u!1001 &600555691470493679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4046,6 +4060,10 @@ PrefabInstance:
     - target: {fileID: 5528055426024272996, guid: adb357bd629d2d24b8ff214ca42a4700, type: 3}
       propertyPath: m_Name
       value: MoveSelectionUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528055426024272996, guid: adb357bd629d2d24b8ff214ca42a4700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5528055426024272999, guid: adb357bd629d2d24b8ff214ca42a4700, type: 3}
       propertyPath: m_Pivot.x

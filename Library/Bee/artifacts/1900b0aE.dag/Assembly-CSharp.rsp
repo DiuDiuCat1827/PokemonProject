@@ -431,6 +431,7 @@
 "Assets/Scripts/GamePlayer/StoryItem.cs"
 "Assets/Scripts/GamePlayer/SurfableWater.cs"
 "Assets/Scripts/GamePlayer/Wallet.cs"
+"Assets/Scripts/GameStates/BattleState.cs"
 "Assets/Scripts/GameStates/FreeRoamState.cs"
 "Assets/Scripts/GameStates/GameMenuState.cs"
 "Assets/Scripts/GameStates/GamePartyState.cs"
