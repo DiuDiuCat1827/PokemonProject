@@ -400,6 +400,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8923396280226712425}
   - component: {fileID: 8923396280226712424}
+  - component: {fileID: 7183898953353105065}
+  - component: {fileID: 3934412884609346691}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -451,6 +453,33 @@ MonoBehaviour:
   backgroundImage: {fileID: 8923396281345037657}
   grassBackground: {fileID: 4422032505096542742, guid: 5e92e4381a92d5649bd2246f7decdb7b, type: 3}
   waterBackground: {fileID: 1106511937541109406, guid: 5e92e4381a92d5649bd2246f7decdb7b, type: 3}
+--- !u!114 &7183898953353105065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280226712422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d73bafffa47744eb89d24810362996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionUI: {fileID: 3762346728112832504}
+--- !u!114 &3934412884609346691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280226712422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad83a570d520e04eb66cb3271daf999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionUI: {fileID: 1721420424415534538}
+  moveDetailsUI: {fileID: 8923396281354450276}
 --- !u!1 &8923396280351680252
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +741,7 @@ GameObject:
   - component: {fileID: 8923396280412610953}
   - component: {fileID: 8923396280412610955}
   - component: {fileID: 8923396280412610952}
+  - component: {fileID: 5901564255899456978}
   m_Layer: 0
   m_Name: RunText
   m_TagString: Untagged
@@ -781,6 +811,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Run
+--- !u!114 &5901564255899456978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280412610950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396280412610952}
 --- !u!1 &8923396280415953666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1193,7 @@ GameObject:
   - component: {fileID: 8923396280655533043}
   - component: {fileID: 8923396280655533042}
   - component: {fileID: 8923396280655533045}
+  - component: {fileID: 5890414261258898000}
   m_Layer: 0
   m_Name: FightText (3)
   m_TagString: Untagged
@@ -1221,6 +1265,19 @@ MonoBehaviour:
   m_Text: 'Move4
 
 '
+--- !u!114 &5890414261258898000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280655533040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396280655533045}
 --- !u!1 &8923396280723996676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1369,7 @@ GameObject:
   - component: {fileID: 8923396280772746841}
   - component: {fileID: 8923396280772746840}
   - component: {fileID: 8923396280772746843}
+  - component: {fileID: 4350197110269534364}
   m_Layer: 0
   m_Name: PokemonText
   m_TagString: Untagged
@@ -1381,6 +1439,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Pokemon
+--- !u!114 &4350197110269534364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280772746838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396280772746843}
 --- !u!1 &8923396280853453923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1541,7 @@ GameObject:
   - component: {fileID: 8923396280866971016}
   - component: {fileID: 8923396280866971019}
   - component: {fileID: 8923396280866971018}
+  - component: {fileID: 5040671056564792040}
   m_Layer: 0
   m_Name: BagText
   m_TagString: Untagged
@@ -1539,6 +1611,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Bag
+--- !u!114 &5040671056564792040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280866971017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396280866971018}
 --- !u!1 &8923396280935145981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8923396280957355355}
+  - component: {fileID: 3762346728112832504}
   m_Layer: 0
   m_Name: ActionSelector
   m_TagString: Untagged
@@ -1618,6 +1704,18 @@ RectTransform:
   m_AnchoredPosition: {x: 238, y: -0.00000071526}
   m_SizeDelta: {x: 270.87, y: 129.72}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3762346728112832504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396280957355352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053761681e94e074891d69a001c8e90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8923396280973954206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1843,7 @@ GameObject:
   - component: {fileID: 8923396281051298527}
   - component: {fileID: 8923396281051298497}
   - component: {fileID: 8923396281051298526}
+  - component: {fileID: 1721420424415534538}
   m_Layer: 0
   m_Name: MoveSelector
   m_TagString: Untagged
@@ -1818,6 +1917,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &1721420424415534538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396281051298524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b4964ea7b5d9a49aaba68797456f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveTexts:
+  - {fileID: 1445378403062772757}
+  - {fileID: 7498767860818532046}
+  - {fileID: 5280656847601983244}
+  - {fileID: 5890414261258898000}
+  ppText: {fileID: 8923396280398854529}
+  typeText: {fileID: 8923396281898897865}
 --- !u!1 &8923396281067093022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2127,7 @@ GameObject:
   - component: {fileID: 8923396281177484372}
   - component: {fileID: 8923396281177484375}
   - component: {fileID: 8923396281177484374}
+  - component: {fileID: 1445378403062772757}
   m_Layer: 0
   m_Name: FightText
   m_TagString: Untagged
@@ -2078,6 +2197,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Move1
+--- !u!114 &1445378403062772757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396281177484373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396281177484374}
 --- !u!1 &8923396281199110744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,6 +2381,7 @@ GameObject:
   - component: {fileID: 8923396281251203866}
   - component: {fileID: 8923396281251203868}
   - component: {fileID: 8923396281251203869}
+  - component: {fileID: 6574532131056814724}
   m_Layer: 0
   m_Name: FightText
   m_TagString: Untagged
@@ -2318,6 +2451,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Fight
+--- !u!114 &6574532131056814724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396281251203867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396281251203869}
 --- !u!1 &8923396281345037655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3213,7 @@ GameObject:
   - component: {fileID: 8923396282020885395}
   - component: {fileID: 8923396282020885394}
   - component: {fileID: 8923396282020885397}
+  - component: {fileID: 7498767860818532046}
   m_Layer: 0
   m_Name: FightText (1)
   m_TagString: Untagged
@@ -3136,6 +3283,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Move2
+--- !u!114 &7498767860818532046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396282020885392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396282020885397}
 --- !u!1 &8923396282063778913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3531,7 @@ GameObject:
   - component: {fileID: 8923396282244924844}
   - component: {fileID: 8923396282244924847}
   - component: {fileID: 8923396282244924846}
+  - component: {fileID: 5280656847601983244}
   m_Layer: 0
   m_Name: FightText (2)
   m_TagString: Untagged
@@ -3440,6 +3601,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Move3
+--- !u!114 &5280656847601983244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923396282244924845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4074584eded91314badfb1ecb0f6cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8923396282244924846}
 --- !u!1 &8923396282263416657
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,4 +22,8 @@ public class TextSlot :MonoBehaviour, ISelectableItem
 
     }
     
+    public void SetText(string s)
+    {
+        text.text = s;
+    }
 }

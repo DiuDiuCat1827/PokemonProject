@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using GDEUtils.StateMachine;
 
 public enum BattleStates { Start, ActionSelection, MoveSelection, RunningTurn, Busy ,PartyScreen ,AboutToUse,MoveToForget, BattleOver,Bag, None}
 
@@ -23,7 +24,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Image playerImage;
     [SerializeField] Image trainerImage;
     [SerializeField] GameObject pokeballSprite;
-    [SerializeField] MoveSelectionUI moveSelectionUI;
+    [SerializeField] MoveToForgetSelectionUI moveSelectionUI;
     [SerializeField] InventoryUI inventoryUI;
     MoveBase moveToLearn;
 
@@ -36,6 +37,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Image backgroundImage;
     [SerializeField] Sprite grassBackground;
     [SerializeField] Sprite waterBackground;
+
+    public StateMachine<BattleSystem> StateMachine { get;private set;}
 
     public event Action<bool> OnBattleOver;
 
@@ -375,6 +378,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
+        StateMachine = new StateMachine<BattleSystem>(this);
+
         playerUnit.Clear();
         enemyUnit.Clear();
 
@@ -424,7 +429,7 @@ public class BattleSystem : MonoBehaviour
 
         partyScreen.Init();     
 
-        ActionSelection();
+        StateMachine.ChangeState(ActionSelectionState.i);
     }
 
     void ActionSelection()
@@ -470,14 +475,9 @@ public class BattleSystem : MonoBehaviour
 
     public void HandleUpdate()
     {
-        if (state == BattleStates.ActionSelection)
-        {
-            HandleActionSelection();
-        }else if(state == BattleStates.MoveSelection)
-        {
-            HandleMoveSelection();
-        }
-        else if (state == BattleStates.PartyScreen)
+        StateMachine.Execute();
+
+        if (state == BattleStates.PartyScreen)
         {
             HandlePartySelection();
         }else if(state == BattleStates.Bag){
@@ -950,4 +950,10 @@ public class BattleSystem : MonoBehaviour
             }
         }
     }
+
+    public BattleDialogBox DialogBox => dialogBox;
+
+    public BattleUnit PlayerUnit => playerUnit;
+
+    public BattleUnit EnemyUnit => enemyUnit;
 }

@@ -5,7 +5,7 @@ using GDEUtils.StateMachine;
 
 public class MoveToForgetState : State<GameController>
 {
-    [SerializeField] MoveSelectionUI moveSelectionUI;
+    [SerializeField] MoveToForgetSelectionUI moveSelectionUI;
 
     public List<MoveBase> CurrentMoves { get; set; }
 
