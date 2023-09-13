@@ -5,8 +5,8 @@ using GDEUtils.StateMachine;
 
 public class MoveSelectionState : State<BattleSystem>
 {
-   [SerializeField] MoveSelectionUI  selectionUI;
-   [SerializeField] GameObject moveDetailsUI;
+    [SerializeField] MoveSelectionUI selectionUI;
+    [SerializeField] GameObject moveDetailsUI;
 
     public List<Move> Moves { get; set; }
 
@@ -50,7 +50,8 @@ public class MoveSelectionState : State<BattleSystem>
 
     void OnMoveSelected(int selection)
     {
-
+        battleSystem.SelectedMove = selection;
+        battleSystem.StateMachine.ChangeState(RunTurnState.i);
     }
 
     void OnBack()

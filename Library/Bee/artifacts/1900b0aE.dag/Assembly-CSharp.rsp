@@ -389,6 +389,7 @@
 "Assets/Scripts/Battle/States/ActionSelectionState.cs"
 "Assets/Scripts/Battle/States/MoveSelectionState.cs"
 "Assets/Scripts/Battle/States/MoveSelectionUI.cs"
+"Assets/Scripts/Battle/States/RunTurnState.cs"
 "Assets/Scripts/Battle/UI/ActionSelectionUI.cs"
 "Assets/Scripts/Battle/UI/MoveToForgetSelectionUI.cs"
 "Assets/Scripts/Character/Character.cs"

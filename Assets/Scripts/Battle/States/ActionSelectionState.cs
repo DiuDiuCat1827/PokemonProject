@@ -39,11 +39,27 @@ public class ActionSelectionState : State<BattleSystem>
 
     void OnActionSelected(int selection)
     {
-        if( selection == 0)
+        if (selection == 0)
         {
             //Fight
+            battleSystem.SelectedAction = BattleAction.Move;
             MoveSelectionState.i.Moves = battleSystem.PlayerUnit.Pokemon.Moves;
             battleSystem.StateMachine.ChangeState(MoveSelectionState.i);
         }
+        else if (selection == 1)
+        {
+            // Bag
+        }
+        else if (selection == 2)
+        {
+            // Pokemon
+        }
+        else if (selection == 3)
+        {
+            // Run
+            battleSystem.SelectedAction = BattleAction.Run;
+            battleSystem.StateMachine.ChangeState(RunTurnState.i);
+        }
+
     }
 }
