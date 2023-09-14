@@ -41,7 +41,7 @@ public class GameMenuState : State<GameController>
     {
         if(selection == 0)
         {
-            gameController.StateMachine.Push(GamePartyState.i);
+            gameController.StateMachine.Push(PartyState.i);
         }else if (selection == 1)
         {
             //Bag

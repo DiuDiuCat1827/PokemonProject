@@ -53,6 +53,7 @@ public class ActionSelectionState : State<BattleSystem>
         else if (selection == 2)
         {
             // Pokemon
+            StartCoroutine(GoToPartyState());
         }
         else if (selection == 3)
         {
@@ -61,5 +62,17 @@ public class ActionSelectionState : State<BattleSystem>
             battleSystem.StateMachine.ChangeState(RunTurnState.i);
         }
 
+    }
+
+    IEnumerator GoToPartyState()
+    {
+        yield return GameController.Instance.StateMachine.PushAndWait(PartyState.i);
+        var selectedPokemon = PartyState.i.SelectedPokemon;
+        if(selectedPokemon != null)
+        {
+            battleSystem.SelectedAction = BattleAction.SwitchPokemon;
+            battleSystem.SelectedPokemon = selectedPokemon;
+            battleSystem.StateMachine.ChangeState(RunTurnState.i);
+        }
     }
 }

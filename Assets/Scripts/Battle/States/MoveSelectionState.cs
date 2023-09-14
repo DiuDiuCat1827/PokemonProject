@@ -44,6 +44,8 @@ public class MoveSelectionState : State<BattleSystem>
         selectionUI.OnSelected -= OnMoveSelected;
         selectionUI.OnBack -= OnBack;
 
+        selectionUI.ClearItems();
+
         moveDetailsUI.SetActive(false);
         battleSystem.DialogBox.EnableDialogText(true);
     }
