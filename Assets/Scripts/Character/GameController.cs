@@ -60,14 +60,12 @@ public class GameController : MonoBehaviour
 
         DialogManager.Instance.OnShowDialog += () =>
         {
-            prevState = state;
-            state = GameState.Dialog;
+            StateMachine.Push(DialogueState.i);
         };
 
         DialogManager.Instance.OnDialogFinished += () =>
         {
-            if (state == GameState.Dialog)
-            state = prevState;
+            StateMachine.Pop();
         };
 
 
@@ -100,19 +98,8 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StartCutsceneState()
-    {
-        state = GameState.Cutscene;
-    }
-
-    public void StartFreeRoamState()
-    {
-        state = GameState.FreeRoam;
-    }
-
     public void OnEnterTrainerView(TrainerControler trainer)
     {
-        state = GameState.Cutscene;
         StartCoroutine(trainer.TriggerTrainerBattle(playerController));
     }
 

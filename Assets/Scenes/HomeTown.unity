@@ -7429,7 +7429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267150252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 7.6, z: 0}
+  m_LocalPosition: {x: 1.52, y: 7.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11987,6 +11987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer
       objectReference: {fileID: 0}
+    - target: {fileID: 1909473794044776726, guid: 9af1e305656017042a956b221ae7eee8, type: 3}
+      propertyPath: pokemons.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: b9908f8b432d247479f01431f721cdc5, type: 2}
     - target: {fileID: 5558262193594703215, guid: 9af1e305656017042a956b221ae7eee8, type: 3}
       propertyPath: uniqueId
       value: 03ece85e-9b1e-4491-94fe-204114d050a8

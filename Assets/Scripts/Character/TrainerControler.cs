@@ -33,6 +33,7 @@ public class TrainerControler : MonoBehaviour,Interactable,ISavable
 
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
+        GameController.Instance.StateMachine.Push(CutsceneState.i);
         AudioManager.i.PlayMusic(trainerAppearsClip);
 
         exclamation.SetActive(true);
@@ -50,8 +51,9 @@ public class TrainerControler : MonoBehaviour,Interactable,ISavable
 
         yield return  DialogManager.Instance.ShowDialog(dialog);
 
-        GameController.Instance.StartTrainerBattle(this);
+        GameController.Instance.StateMachine.Pop();
 
+        GameController.Instance.StartTrainerBattle(this);
     }
 
     public void SetFovRotation(FacingDirection dir)

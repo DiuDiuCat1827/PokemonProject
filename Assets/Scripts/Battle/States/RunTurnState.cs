@@ -355,8 +355,8 @@ public class RunTurnState : State<BattleSystem>
             var nextPokemon = playerParty.GetHealthyPokemon();
             if (nextPokemon != null)
             {
-               yield return GameController.Instance.StateMachine.PushAndWait(PartyState.i);
-               yield return  battleSystem.SwitchPokemon(PartyState.i.SelectedPokemon);
+                AboutToUseState.i.NewPokemon = nextPokemon;
+                yield return battleSystem.StateMachine.PushAndWait(AboutToUseState.i);
             }
             else
             {
@@ -374,7 +374,8 @@ public class RunTurnState : State<BattleSystem>
                 var nextPokemon = trainerParty.GetHealthyPokemon();
                 if (nextPokemon != null)
                 {
-                    yield break;// StartCoroutine(AboutToUse(nextPokemon));
+                    AboutToUseState.i.NewPokemon = nextPokemon;
+                    yield return battleSystem.StateMachine.PushAndWait(AboutToUseState.i);
                 }
                 else
                 {

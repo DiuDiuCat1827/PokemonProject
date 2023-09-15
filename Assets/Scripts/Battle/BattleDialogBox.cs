@@ -62,6 +62,8 @@ public class BattleDialogBox : MonoBehaviour
         choiceBox.SetActive(enabled);
     }
 
+    public bool IsChoiceBoxEnabled => choiceBox.activeSelf;
+
     public void EnableMoveSelector(bool enabled)
     {
         moveSelector.SetActive(enabled);
